@@ -5,6 +5,8 @@ import Tools from './components/Tools';
 import ExtraTools from './components/ExtraTools';
 import Main from './components/Main';
 
+import { PositionProvider, SplinePositionProvider } from './context/Context';
+
 function App() {
   return (
     <div className="wrapper">
@@ -13,7 +15,11 @@ function App() {
       <Tabs />
       <Tools />
       <ExtraTools />
-      <Main />
+      <PositionProvider>
+        <SplinePositionProvider>
+          <Main />  
+        </SplinePositionProvider>
+      </PositionProvider>
       <div></div>
     </div>
   );

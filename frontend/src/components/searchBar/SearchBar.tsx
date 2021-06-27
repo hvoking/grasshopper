@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { usePosition } from '../../context/Context';
 
-const SearchBar = ({positionX, positionY, nodesAdded, nodesAddedSet, currentInputSet, currentInput}: {positionX: number, positionY: number, nodesAdded: any, nodesAddedSet: any, currentInputSet: any, currentInput: any}) => {
+const SearchBar = () => {
+	const {position, nodesAdded, nodesAddedSet, currentInputSet, currentInput} = usePosition()
 	const [nodesList, nodesListSet] = useState<any>([]);
 	const style = {
-		left: positionX - 100, 
-		top: positionY - 40
+		left: position.x - 100, 
+		top: position.y - 40
 	}
 	const onChange = (e: any) => {
 		 currentInputSet(e.currentTarget.value);
