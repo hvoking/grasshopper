@@ -1,11 +1,12 @@
 import './App.scss';
-import TextTools from './components/TextTools';
-import Tabs from './components/Tabs';
-import Tools from './components/Tools';
-import ExtraTools from './components/ExtraTools';
-import Main from './components/Main';
+import TextTools from './components/tools/TextTools';
+import Tabs from './components/tools/Tabs';
+import Tools from './components/tools/Tools';
+import ExtraTools from './components/tools/ExtraTools';
+import Main from './components/main/Main';
 
-import { PositionProvider, SplinePositionProvider } from './context/Context';
+import { PositionProvider } from './context/CanvasPositionContext';
+import { SplineStartPositionProvider } from './context/SplineContext';
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
       <Tools />
       <ExtraTools />
       <PositionProvider>
-        <SplinePositionProvider>
+        <SplineStartPositionProvider>
           <Main />  
-        </SplinePositionProvider>
+        </SplineStartPositionProvider>
       </PositionProvider>
       <div></div>
     </div>

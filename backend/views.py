@@ -10,15 +10,14 @@ with open(path, 'r', encoding = 'utf8') as f:
 		text = f.read()
 m = re.compile(r"(\w+)(')")
 nodes = [i.group(1) for i in re.finditer(m, text)]
-
 def checkNull(a):
 		return '' if a == None else a
 		
 
 @api_view(['GET'])
 def nodesList(request, node):
-	n = re.compile(rf"({node})(\w+)?(')")
-	searchedNodes = [i.group(1) + checkNull(i.group(2)) for i in re.finditer(n, str(nodes))]
+	n = re.compile(rf"(')({node})(\w+)?(')", re.I)
+	searchedNodes = set([i.group(2) + checkNull(i.group(3)) for i in re.finditer(n, str(nodes))])
 	return Response({"nodes": searchedNodes})
 
 @api_view(['GET'])
