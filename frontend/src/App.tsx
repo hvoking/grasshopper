@@ -7,20 +7,23 @@ import Main from './components/main/Main';
 
 import { PositionProvider } from './context/MainContext';
 import { SplinePositionProvider } from './context/SplineContext';
+import { SearchProvider } from './context/SearchContext';
 
 function App() {
   return (
     <div className="wrapper">
       <div className="header">Grasshopper - unnamed</div>
-      <TextTools />
-      <Tabs />
-      <Tools />
-      <ExtraTools />
-       <SplinePositionProvider>
-        <PositionProvider>
-          <Main />  
-        </PositionProvider>
-      </SplinePositionProvider>
+      <PositionProvider>
+        <SearchProvider>
+          <TextTools />
+          <Tabs />
+            <Tools />
+          <ExtraTools />
+           <SplinePositionProvider>
+              <Main />  
+          </SplinePositionProvider>
+        </SearchProvider>
+      </PositionProvider>
       <div></div>
     </div>
   );
