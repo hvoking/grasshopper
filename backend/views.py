@@ -4,7 +4,6 @@ def nodes(arg):
 def geometries(arg):
    pass
 
-
 # @api_view(['GET'])
 # def separation(request, geometry):
 # 	m = re.compile(r'(constructor)(.*)(\( )(.*)( \))')
