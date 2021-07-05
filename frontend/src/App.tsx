@@ -17,10 +17,10 @@ function App() {
         <SearchProvider>
           <TextTools />
           <Tabs />
-            <Tools />
+          <Tools />
           <ExtraTools />
-           <SplinePositionProvider>
-              <Main />  
+          <SplinePositionProvider>
+            <Main />
           </SplinePositionProvider>
         </SearchProvider>
       </PositionProvider>
