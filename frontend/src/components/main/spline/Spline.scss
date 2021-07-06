@@ -1,0 +1,13 @@
+svg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.spline {
+	fill: none;
+	stroke: black;
+	stroke-width: 3px;
+	stroke-linecap: "round";
+	stroke-dasharray: 5 3;
+}

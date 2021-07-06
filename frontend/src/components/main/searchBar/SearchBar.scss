@@ -1,0 +1,38 @@
+// SearchBox
+.searchBox {
+  position: fixed;
+  display: grid;
+  grid-template-columns: 200px;
+  grid-template-rows: 30px 16px;
+  border: 1px solid black;
+}
+
+.nodeLabel {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-size: 0.6em;
+  background-color: #f0f0f0;
+  font-style: italic;
+  border-bottom: 1px solid black;
+}
+.inputNode {
+  text-align: center;
+  background-color: white;
+  font-family: "Segoe UI";
+  border: none;
+}
+.inputNode:focus {
+    outline: none;
+}
+
+.nodeItem {
+  background-color: #EEEEEE;
+  color: gray;
+  cursor: pointer;
+  &:hover {
+    background-color: #CCCCCC;
+    color: black;
+
+  }
+}
