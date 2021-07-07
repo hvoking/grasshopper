@@ -1,3 +1,5 @@
+import './ExtraTools.scss';
+
 const ExtraTools = () => {
 	return (
 		<div data-testid="extraTools" className="extraTools">

@@ -8,6 +8,7 @@ import Main from './components/main/Main';
 import { PositionProvider } from './context/MainContext';
 import { SplinePositionProvider } from './context/SplineContext';
 import { SearchProvider } from './context/SearchContext';
+import { SceneProvider } from './context/SceneContext';
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
           <Tools />
           <ExtraTools />
           <SplinePositionProvider>
-            <Main />
+            <SceneProvider>
+              <Main />
+            </SceneProvider>
           </SplinePositionProvider>
         </SearchProvider>
       </PositionProvider>

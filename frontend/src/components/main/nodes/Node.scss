@@ -2,6 +2,7 @@ $logo: '../../../img/1.png';
 $logoAfter: '../../../img/2.png';
 
 .node {
+  position: absolute;
   width: fit-content;
   display: grid;
   grid-template-columns: 2fr auto auto;

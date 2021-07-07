@@ -3,7 +3,8 @@ from .regularExpressions import *
 import re
 
 def nodesListPattern(node, nodes):
-	return set([i.group(2) + checkNull(i.group(3)) for i in re.finditer(nodeInputRegex(node), str(nodes))])
+	nodesList = re.finditer(nodeInputRegex(node), str(nodes))
+	return set([i.group(2) + checkNull(i.group(3)) for i in nodesList])
 
 def nodeDetailPattern(node, text):
 	p = re.finditer(nodeInputWordsRegex(node), text)
