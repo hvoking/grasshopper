@@ -5,6 +5,7 @@ import {
 import { useEffect, useRef } from 'react';
 import {OrbitControls} from './OrbitControls.js'
 import { useScene } from '../../../context/SceneContext';
+import Geometry from '../geometry/Geometry'
 
 const Graph = () => {
 	const canvasRef = useRef<null | HTMLDivElement>(null);
@@ -41,14 +42,14 @@ const Graph = () => {
 	const createNewRenderer = (): WebGLRenderer => {
 		// Set the initial renderer
 		const renderer = new WebGLRenderer();
-		renderer.setClearColor(0xAAAAAA);
+		renderer.setClearColor(0xd4d0c8);
 		// renderer.setSize( window.innerWidth, window.innerHeight );
 		return renderer
 	}
 
 	return (
 		<div ref={canvasRef}>
-			{/*<Geometry />*/}
+			<Geometry />
 		</div>
 	)
 }

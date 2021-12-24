@@ -15,6 +15,7 @@ export const SearchProvider = ({children}: any) => {
 	const [nodesList, nodesListSet] = useState<string[]>([]);
 	const [geometryItems, geometryItemsSet] = useState<string[]>([])
 	const [allItems, allItemsSet] = useState<any>([])
+	const [currentGeometry, currentGeometrySet] = useState<any>(null)
 
 	useEffect(() => {
 		const geometries = () => {
@@ -51,6 +52,7 @@ export const SearchProvider = ({children}: any) => {
 	const createNode = (name: string) => {
 		const threeDefinition = THREE
 		const geo = eval(`new threeDefinition.${name}()`)
+		currentGeometrySet(geo) 
 		console.log(geo)
 	}
 	const searchNode = (e: any) => {
@@ -95,7 +97,8 @@ export const SearchProvider = ({children}: any) => {
 			searchGeometry, 
 			geometryItems,
 			allItems, 
-			allItemsSet
+			allItemsSet,
+			currentGeometry
 		}}>
 			{children}
 		</SearchContext.Provider>
