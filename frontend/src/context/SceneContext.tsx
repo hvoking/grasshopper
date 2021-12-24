@@ -17,3 +17,5 @@ export const SceneProvider = ({children}: any) => {
 		</SceneContext.Provider>
 	)
 }
+
+SceneContext.displayName = "SceneContext";

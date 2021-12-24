@@ -15,4 +15,5 @@ const Tabs = () => {
 	)
 }
 
+Tabs.displayName="Tabs";
 export default Tabs;

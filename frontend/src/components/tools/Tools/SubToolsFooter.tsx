@@ -43,4 +43,6 @@ const SubToolsFooter = ({folder}: SubToolsFooterType) => {
 		</div>
 	)
 }
+
+SubToolsFooter.displayName="SubToolsFooter";
 export default SubToolsFooter;

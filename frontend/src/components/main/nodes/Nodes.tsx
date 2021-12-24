@@ -14,4 +14,5 @@ const Nodes = () => {
 	)
 }
 
+Nodes.displayName="Nodes";
 export default Nodes;

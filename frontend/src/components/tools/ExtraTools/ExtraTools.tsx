@@ -17,4 +17,5 @@ const ExtraTools = () => {
 	)
 }
 
+ExtraTools.displayName="ExtraTools";
 export default ExtraTools;

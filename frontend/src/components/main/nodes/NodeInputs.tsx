@@ -12,4 +12,5 @@ const NodeInputs = ({nodeItem}: any) => {
 	)
 }
 
+NodeInputs.displayName="NodeInputs";
 export default NodeInputs;

@@ -10,8 +10,6 @@ import { useScene } from '../../context/SceneContext';
 import Nodes from './nodes/Nodes';
 import SearchBar from './searchBar/SearchBar';
 import Spline from './spline/Spline';
-
-
 import { usePosition } from '../../context/MainContext';
 import { useSplinePosition } from '../../context/SplineContext';
 import Graph from './canvas/Graph'
@@ -29,13 +27,14 @@ const Main = () => {
 			onDoubleClick={activeSearchBox}
 			onMouseMove={onMouseMove}
 			>
-			<Graph />
-			{activeSpline && <Spline />}
-			{searchBox && <SearchBar />}
-			<Nodes />
+			<Graph/>
+			{activeSpline && <Spline/>}
+			{searchBox && <SearchBar/>}
+			<Nodes/>
 		</div>
 			
 	)
 }
 
+Main.displayName="Main";
 export default Main;

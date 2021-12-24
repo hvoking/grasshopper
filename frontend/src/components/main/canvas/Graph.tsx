@@ -10,6 +10,7 @@ import Geometry from '../geometry/Geometry'
 const Graph = () => {
 	const canvasRef = useRef<null | HTMLDivElement>(null);
 	const scene = useScene();
+	
 	useEffect(() => {
 		const camera = createNewCamera();
 		const renderer = createNewRenderer();
@@ -49,7 +50,7 @@ const Graph = () => {
 
 	return (
 		<div ref={canvasRef}>
-			<Geometry />
+			<Geometry/>
 		</div>
 	)
 }

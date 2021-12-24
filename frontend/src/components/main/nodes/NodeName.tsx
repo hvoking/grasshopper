@@ -34,4 +34,5 @@ const NodeName = ({nodeItem}: any) => {
 	)
 }
 
+NodeName.displayName="NodeName";
 export default NodeName;

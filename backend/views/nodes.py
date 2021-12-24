@@ -1,10 +1,10 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .utils import readFile, nodesNames, geometriesNames
-from .regexPatterns import nodesListPattern, nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
-from .regularExpressions import *
+from backend.utils.utils import readFile, nodesNames, geometriesNames
+from backend.utils.regexPatterns import nodesListPattern, nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
+from backend.utils.regularExpressions import *
 from os import listdir
-from .paths import *
+from backend.utils.paths import *
 
 # List of nodes and geometries available for search
 nodes = nodesNames(threeExportationFilePath) +  geometriesNames(threejsGeometriesPath)

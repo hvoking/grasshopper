@@ -14,4 +14,5 @@ const SubTools = ({folder}: SubToolsFooterType) => {
 	)
 }
 
+SubTools.displayName="SubTools";
 export default SubTools;

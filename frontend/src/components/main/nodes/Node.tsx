@@ -21,4 +21,5 @@ const Node = ({nodeItem}: {nodeItem: any}) => {
 	)
 }
 
+Node.displayName="Node";
 export default Node;

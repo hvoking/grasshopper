@@ -23,4 +23,5 @@ const NodeOutputs = ({nodeItem}: any) => {
 	)
 }
 
+NodeOutputs.displayName="NodeOutputs";
 export default NodeOutputs;

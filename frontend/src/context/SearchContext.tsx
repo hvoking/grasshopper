@@ -104,3 +104,5 @@ export const SearchProvider = ({children}: any) => {
 		</SearchContext.Provider>
 	)
 }
+
+SearchContext.displayName = "SearchContext";

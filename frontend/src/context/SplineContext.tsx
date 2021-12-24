@@ -42,3 +42,5 @@ export const SplinePositionProvider = ({children}: any) => {
 	)
 
 }
+
+SplinePositionContext.displayName = "SplinePositionContext";

@@ -16,4 +16,5 @@ const SubToolsContainer = () => {
 	)
 }
 
+SubToolsContainer.displayName="SubToolsContainer";
 export default SubToolsContainer;

@@ -11,3 +11,5 @@ export const useGeometry = () => {
 export const GeometryProvider = ({children}: any) => {
 	const [Geometry, GeometrySet] = useState<any>(null)
 }
+
+GeometryContext.displayName = "GeometryContext";

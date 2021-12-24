@@ -10,4 +10,5 @@ const TextTools = () => {
 	)
 }
 
+TextTools.displayName="TextTools"
 export default TextTools;

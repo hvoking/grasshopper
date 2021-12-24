@@ -49,3 +49,5 @@ export const PositionProvider = ({children}: any) => {
 	)
 
 }
+
+PositionContext.displayName = "PositionContext";

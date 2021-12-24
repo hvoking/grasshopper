@@ -1,8 +1,8 @@
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .utils import parameters, readFile, listOfGeometries
-from .regularExpressions import nodePropertiesRegex, nodeInterfaceRegex
-from .paths import *
+from backend.utils.utils import parameters, readFile, listOfGeometries
+from backend.utils.regularExpressions import nodePropertiesRegex, nodeInterfaceRegex
+from backend.utils.paths import *
 import re
 
 # List all geometries in threejs folder

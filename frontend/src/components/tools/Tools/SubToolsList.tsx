@@ -20,4 +20,5 @@ const SubToolsList = () => {
 	)
 }
 
+SubToolsList.displayName="SubToolsList"
 export default SubToolsList;

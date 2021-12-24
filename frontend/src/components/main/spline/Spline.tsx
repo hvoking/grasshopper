@@ -23,4 +23,5 @@ const Spline = () => {
 	)
 }
 
+Spline.displayName="Spline";
 export default Spline;

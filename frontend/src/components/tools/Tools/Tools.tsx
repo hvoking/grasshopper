@@ -28,4 +28,5 @@ const Tools = () => {
 	)
 }
 
+Tools.displayName="Tools";
 export default Tools;
