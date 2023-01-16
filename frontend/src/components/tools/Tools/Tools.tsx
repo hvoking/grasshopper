@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './Tools.scss';
 import SubTools from './SubTools';
  
 const Tools = () => {
 	const [listOfTools, listOfToolsSet] = useState<string[]>([])
+	const toolsRef = useRef<any>()
 
 	useEffect(() => {
 		const getFolders = () => {
@@ -15,8 +16,14 @@ const Tools = () => {
 		}
 		getFolders();
 	}, [])
+
+	const onwheel = (e: any) => {
+		toolsRef.current.scrollLeft += e.deltaY
+	}
+
+
 	return (
-		<div className="tools">
+		<div ref={toolsRef} onWheel={onwheel} className="tools">
 			{listOfTools.map((folder: any, index: number) => { 
 				return (
 					<div key={index} className="subTools">

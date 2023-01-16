@@ -7,9 +7,7 @@ interface distanceType {
 
 const Spline = () => {
 	const {splineStartPosition, splineEndPosition} = useSplinePosition();
-	const distance: distanceType = (a, b) => {
-		return Math.sqrt((b.x - a.x)**2 + (b.y - a.y)**2)
-	}
+	const distance: distanceType = (a, b) => (Math.sqrt((b.x - a.x)**2 + (b.y - a.y)**2))
 	const dist = distance(splineStartPosition, splineEndPosition)
 	return (
 		<svg>

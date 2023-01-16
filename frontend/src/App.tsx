@@ -16,13 +16,13 @@ function App() {
       <div className="header">Grasshopper - unnamed</div>
       <PositionProvider>
         <SearchProvider>
-          <TextTools />
-          <Tabs />
-          <Tools />
-          <ExtraTools />
+          <TextTools/>
+          <Tabs/>
+          <Tools/>
+          <ExtraTools/>
           <SplinePositionProvider>
             <SceneProvider>
-              <Main />
+              <Main/>
             </SceneProvider>
           </SplinePositionProvider>
         </SearchProvider>

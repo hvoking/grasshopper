@@ -1,5 +1,8 @@
-import re
+# System imports
 import os
+
+# Third-party imports
+import re
 
 def checkNull(regexItem):
 	return '' if regexItem == None else regexItem

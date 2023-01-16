@@ -3,9 +3,30 @@ import {
 	PerspectiveCamera
 } from 'three';
 import { useEffect, useRef } from 'react';
-import {OrbitControls} from './OrbitControls.js'
+import { OrbitControls } from './OrbitControls.js'
 import { useScene } from '../../../context/SceneContext';
-import Geometry from '../geometry/Geometry'
+import Geometry from '../geometry/Geometry';
+
+const makeCamera = (fov: number =40): PerspectiveCamera => {
+	const aspect = 2;
+	const near = 0.1;
+	const far = 1000;
+	return new PerspectiveCamera(fov, aspect, near, far);
+}
+const createNewCamera = () => {
+	const camera = makeCamera();
+	camera.position.set(2, 2, 2).multiplyScalar(8);
+	camera.lookAt(0, 0, 0);
+	return camera
+}
+
+const createNewRenderer = (): WebGLRenderer => {
+	// Set the initial renderer
+	const renderer = new WebGLRenderer();
+	renderer.setClearColor(0xd4d0c8);
+	// renderer.setSize( window.innerWidth, window.innerHeight );
+	return renderer
+}
 
 const Graph = () => {
 	const canvasRef = useRef<null | HTMLDivElement>(null);
@@ -25,28 +46,6 @@ const Graph = () => {
 		animate();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
-
-	const makeCamera = (fov: number =40): PerspectiveCamera => {
-		const aspect = 2;
-		const near = 0.1;
-		const far = 1000;
-		return new PerspectiveCamera(fov, aspect, near, far);
-	}
-	const createNewCamera = () => {
-		const camera = makeCamera();
-		camera.position.set(2, 2, 2).multiplyScalar(8);
-		camera.lookAt(0, 0, 0);
-		return camera
-
-	}
-
-	const createNewRenderer = (): WebGLRenderer => {
-		// Set the initial renderer
-		const renderer = new WebGLRenderer();
-		renderer.setClearColor(0xd4d0c8);
-		// renderer.setSize( window.innerWidth, window.innerHeight );
-		return renderer
-	}
 
 	return (
 		<div ref={canvasRef}>

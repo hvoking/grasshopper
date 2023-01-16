@@ -1,10 +1,15 @@
+# System imports
+from os import listdir
+
+# App imports
+from apps.grass_geometry.utils.utils import readFile, nodesNames, geometriesNames
+from apps.grass_geometry.utils.regexPatterns import nodesListPattern, nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
+from apps.grass_geometry.utils.regularExpressions import *
+from apps.grass_geometry.utils.paths import *
+
+# Third-party imports
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from backend.utils.utils import readFile, nodesNames, geometriesNames
-from backend.utils.regexPatterns import nodesListPattern, nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
-from backend.utils.regularExpressions import *
-from os import listdir
-from backend.utils.paths import *
 
 # List of nodes and geometries available for search
 nodes = nodesNames(threeExportationFilePath) +  geometriesNames(threejsGeometriesPath)

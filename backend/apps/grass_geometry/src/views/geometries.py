@@ -1,8 +1,11 @@
+# App imports
+from apps.grass_geometry.utils.utils import parameters, readFile, listOfGeometries
+from apps.grass_geometry.utils.regularExpressions import nodePropertiesRegex, nodeInterfaceRegex
+from apps.grass_geometry.utils.paths import *
+
+# Third-party imports
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from backend.utils.utils import parameters, readFile, listOfGeometries
-from backend.utils.regularExpressions import nodePropertiesRegex, nodeInterfaceRegex
-from backend.utils.paths import *
 import re
 
 # List all geometries in threejs folder
@@ -27,4 +30,3 @@ def geometriesDetail(request, geometry):
 @api_view(['GET'])
 def files(request, file):
 	return Response({f'{file}': listOfGeometries(threejsTypesPath + f'{file}')})
-

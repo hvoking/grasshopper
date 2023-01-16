@@ -1,5 +1,5 @@
 from django.urls import path
-from . import views
+from apps.grass_geometry.src import views
 
 urlpatterns = [
 	path('nodes-list/<str:node>/', views.nodesList, name="nodesList"),

@@ -11,16 +11,18 @@
 }
 
 .tools {
+	overflow-y: auto;
 	width: 100%;
 	height: 100%;
 	background-color: #e4e4e4;
 	display: grid;
 	grid-template-columns: repeat(15, 1fr);
 	cursor: default;
+	overflow-x: hidden;
 }
 
 .subTools {
-	position: relative;
+	// position: relative;
 	display: grid;
 	grid-template-rows: 80% 20%;
 	font-size: 0.6em;
