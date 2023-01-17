@@ -1,11 +1,14 @@
+// App imports
+import './styles.scss';
+
+// Context imports
 import { useSplinePosition, splinePositionType } from '../../../context/SplineContext';
-import './Spline.scss';
 
 interface distanceType {
 	(a: splinePositionType, b: splinePositionType): number
 }
 
-const Spline = () => {
+export const Spline = () => {
 	const {splineStartPosition, splineEndPosition} = useSplinePosition();
 	const distance: distanceType = (a, b) => (Math.sqrt((b.x - a.x)**2 + (b.y - a.y)**2))
 	const dist = distance(splineStartPosition, splineEndPosition)
@@ -22,4 +25,3 @@ const Spline = () => {
 }
 
 Spline.displayName="Spline";
-export default Spline;

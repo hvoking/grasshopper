@@ -1,11 +1,16 @@
-import Draggable from 'react-draggable';
-import NodeOutputs from './NodeOutputs';
-import NodeInputs from './NodeInputs';
-import NodeName from './NodeName';
+// React imports
 import { useRef } from 'react';
-import './Node.scss';
 
-const Node = ({nodeItem}: {nodeItem: any}) => {
+// Third-party imports
+import Draggable from 'react-draggable';
+
+// App imports
+import { NodeOutputs } from './NodeOutputs';
+import { NodeInputs } from './NodeInputs';
+import { NodeName } from './NodeName';
+import './styles.scss';
+
+export const Node = ({nodeItem}: {nodeItem: any}) => {
 	const nodeRef = useRef(null);
 	return (
 			<>
@@ -22,4 +27,3 @@ const Node = ({nodeItem}: {nodeItem: any}) => {
 }
 
 Node.displayName="Node";
-export default Node;

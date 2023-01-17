@@ -1,7 +1,10 @@
-import { usePosition } from '../../../context/MainContext';
-import Node from './Node';
+// App imports
+import { Node } from './Node';
 
-const Nodes = () => {
+// Context imports
+import { usePosition } from '../../../context/MainContext';
+
+export const Nodes = () => {
 	const { nodesAdded } = usePosition()
 	return (
 		<>
@@ -15,4 +18,3 @@ const Nodes = () => {
 }
 
 Nodes.displayName="Nodes";
-export default Nodes;

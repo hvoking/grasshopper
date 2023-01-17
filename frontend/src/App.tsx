@@ -3,7 +3,7 @@ import TextTools from './components/tools/TextTools/TextTools';
 import Tabs from './components/tools/Tabs/Tabs';
 import Tools from './components/tools/Tools/Tools';
 import ExtraTools from './components/tools/ExtraTools/ExtraTools';
-import Main from './components/main/Main';
+import { Main } from './components/main';
 
 import { PositionProvider } from './context/MainContext';
 import { SplinePositionProvider } from './context/SplineContext';

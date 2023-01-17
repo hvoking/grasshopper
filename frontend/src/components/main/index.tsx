@@ -1,20 +1,16 @@
-import {
-	WebGLRenderer, 
-	PerspectiveCamera
-} from 'three';
-import { useEffect, useRef } from 'react';
-import {OrbitControls} from './canvas/OrbitControls.js'
-// import Geometry from '../geometry/Geometry';
-import { useScene } from '../../context/SceneContext';
+// App imports
+// import { Geometry } from '../geometry';
+import { Nodes } from './nodes/Nodes';
+import { SearchBar } from './searchBar';
+import { Spline } from './spline';
+import { Graph } from './graph'
 
-import Nodes from './nodes/Nodes';
-import SearchBar from './searchBar/SearchBar';
-import Spline from './spline/Spline';
+// Context imports
+import { useScene } from '../../context/SceneContext';
 import { usePosition } from '../../context/MainContext';
 import { useSplinePosition } from '../../context/SplineContext';
-import Graph from './canvas/Graph'
 
-const Main = () => {
+export const Main = () => {
 	const { deActivateSearchBox, activeSearchBox, searchBox } = usePosition()
 	const { activeSpline, splineEndPositionSet } = useSplinePosition()
 	const onMouseMove = (e: any) => {
@@ -26,7 +22,7 @@ const Main = () => {
 			onClick={deActivateSearchBox} 
 			onDoubleClick={activeSearchBox}
 			onMouseMove={onMouseMove}
-			>
+		>
 			<Graph/>
 			{activeSpline && <Spline/>}
 			{searchBox && <SearchBar/>}
@@ -37,4 +33,3 @@ const Main = () => {
 }
 
 Main.displayName="Main";
-export default Main;

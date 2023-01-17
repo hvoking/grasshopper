@@ -1,7 +1,8 @@
+// React imports
 import { useState } from 'react';
 
 let timer: any = null;
-const NodeName = ({nodeItem}: any) => {
+export const NodeName = ({nodeItem}: any) => {
 	const [information, informationSet] = useState(false)
 	const onMouseEnter = () => {
 		timer = setTimeout(() => informationSet(true), 500)
@@ -35,4 +36,3 @@ const NodeName = ({nodeItem}: any) => {
 }
 
 NodeName.displayName="NodeName";
-export default NodeName;

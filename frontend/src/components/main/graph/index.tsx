@@ -1,11 +1,15 @@
-import {
-	WebGLRenderer, 
-	PerspectiveCamera
-} from 'three';
+// React imports
 import { useEffect, useRef } from 'react';
-import { OrbitControls } from './OrbitControls.js'
+
+// App imports
+import { OrbitControls } from '../orbitControls'
+import { Geometry } from '../geometry';
+
+// Context imports
 import { useScene } from '../../../context/SceneContext';
-import Geometry from '../geometry/Geometry';
+
+// Third-party imports
+import { WebGLRenderer, PerspectiveCamera } from 'three';
 
 const makeCamera = (fov: number =40): PerspectiveCamera => {
 	const aspect = 2;
@@ -28,7 +32,7 @@ const createNewRenderer = (): WebGLRenderer => {
 	return renderer
 }
 
-const Graph = () => {
+export const Graph = () => {
 	const canvasRef = useRef<null | HTMLDivElement>(null);
 	const scene = useScene();
 	
@@ -55,4 +59,3 @@ const Graph = () => {
 }
 
 Graph.displayName="Graph";
-export default Graph;

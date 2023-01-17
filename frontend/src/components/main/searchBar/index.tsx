@@ -1,8 +1,12 @@
-import { useSearch } from '../../../context/SearchContext';
-import './SearchBar.scss';
+// App imports
+import './styles.scss';
 
-const SearchBar = () => {
+// Context imports
+import { useSearch } from '../../../context/SearchContext';
+
+export const SearchBar = () => {
 	const {style, searchList, currentInput, nodesList, searchNode} = useSearch()
+	
 	return (
 		<div style={style} className="searchBox">
 			<label className="nodeLabel" htmlFor="searchBox">Enter a keyword...</label>
@@ -25,4 +29,3 @@ const SearchBar = () => {
 }
 
 SearchBar.displayName="SearchBar"
-export default SearchBar;

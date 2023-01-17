@@ -1,7 +1,10 @@
-import { useSplinePosition } from '../../../context/SplineContext';
+// React imports
 import { useRef } from 'react';
 
-const NodeOutputs = ({nodeItem}: any) => {
+// Context imports
+import { useSplinePosition } from '../../../context/SplineContext';
+
+export const NodeOutputs = ({nodeItem}: any) => {
 	const outputKnob = useRef<any>(null)
 	const {startTransmitting, splineStartPositionSet, activeSplineSet} = useSplinePosition()
 	const activateSpline = (e: any) => {
@@ -24,4 +27,3 @@ const NodeOutputs = ({nodeItem}: any) => {
 }
 
 NodeOutputs.displayName="NodeOutputs";
-export default NodeOutputs;
