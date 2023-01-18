@@ -1,8 +1,11 @@
+// React imports
 import { useState, useEffect, useRef } from 'react';
-import './Tools.scss';
-import SubTools from './SubTools';
+
+// App imports
+import { SubTools } from './subTools';
+import './styles.scss';
  
-const Tools = () => {
+export const Tools = () => {
 	const [listOfTools, listOfToolsSet] = useState<string[]>([])
 	const toolsRef = useRef<any>()
 
@@ -36,4 +39,3 @@ const Tools = () => {
 }
 
 Tools.displayName="Tools";
-export default Tools;

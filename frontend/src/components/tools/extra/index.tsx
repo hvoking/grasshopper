@@ -1,6 +1,7 @@
-import './ExtraTools.scss';
+// App imports
+import './styles.scss';
 
-const ExtraTools = () => {
+export const ExtraTools = () => {
 	return (
 		<div data-testid="extraTools" className="extraTools">
 		  <div>
@@ -18,4 +19,3 @@ const ExtraTools = () => {
 }
 
 ExtraTools.displayName="ExtraTools";
-export default ExtraTools;

@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 
 // Context imports
-import { useSplinePosition } from '../../../context/SplineContext';
+import { useSplinePosition } from '../context/SplineContext';
 
 export const NodeOutputs = ({nodeItem}: any) => {
 	const outputKnob = useRef<any>(null)

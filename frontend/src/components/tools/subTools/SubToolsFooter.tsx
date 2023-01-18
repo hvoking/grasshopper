@@ -1,12 +1,12 @@
-import { useSearch } from '../../../context/SearchContext'
+import { useSearch } from '../../main/context/SearchContext'
 import { useState } from 'react';
-import SubToolsList from './SubToolsList';
+import { SubToolsList } from './SubToolsList';
 
 interface SubToolsFooterType {
 	folder: string; 
 }
 
-const SubToolsFooter = ({folder}: SubToolsFooterType) => {
+export const SubToolsFooter = ({folder}: SubToolsFooterType) => {
 	const [subToolsList, subToolsListSet] = useState<boolean>(false)
 	const [delay, delaySet] = useState<any>(null)
 	const {allItemsSet} = useSearch()
@@ -45,4 +45,3 @@ const SubToolsFooter = ({folder}: SubToolsFooterType) => {
 }
 
 SubToolsFooter.displayName="SubToolsFooter";
-export default SubToolsFooter;

@@ -1,16 +1,18 @@
-import './App.scss';
-import TextTools from './components/tools/TextTools/TextTools';
-import Tabs from './components/tools/Tabs/Tabs';
-import Tools from './components/tools/Tools/Tools';
-import ExtraTools from './components/tools/ExtraTools/ExtraTools';
+// App imports
 import { Main } from './components/main';
+import { TextTools } from './components/tools/text';
+import { Tabs } from './components/tools/tabs';
+import { Tools } from './components/tools';
+import { ExtraTools } from './components/tools/extra';
+import './styles.scss';
 
-import { PositionProvider } from './context/MainContext';
-import { SplinePositionProvider } from './context/SplineContext';
-import { SearchProvider } from './context/SearchContext';
-import { SceneProvider } from './context/SceneContext';
+// Context providers
+import { PositionProvider } from './components/main/context/MainContext';
+import { SplinePositionProvider } from './components/main/context/SplineContext';
+import { SearchProvider } from './components/main/context/SearchContext';
+import { SceneProvider } from './components/main/context/SceneContext';
 
-function App() {
+export const App = () => {
   return (
     <div className="wrapper">
       <div className="header">Grasshopper - unnamed</div>
@@ -31,6 +33,3 @@ function App() {
     </div>
   );
 }
-
-
-export default App;

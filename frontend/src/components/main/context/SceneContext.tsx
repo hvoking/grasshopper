@@ -1,4 +1,7 @@
+// React imports
 import { useState, useContext, createContext } from 'react';
+
+// Third-party imports
 import { Scene } from 'three';
 
 const SceneContext: React.Context<any> = createContext(() => {});

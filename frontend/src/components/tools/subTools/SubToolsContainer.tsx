@@ -1,6 +1,6 @@
 const files = ['Hello', 'this', 'are', 'the', 'folders', 'yey']
 
-const SubToolsContainer = () => {
+export const SubToolsContainer = () => {
 	return (
 		<div className="subToolsContainer">
 			{
@@ -17,4 +17,3 @@ const SubToolsContainer = () => {
 }
 
 SubToolsContainer.displayName="SubToolsContainer";
-export default SubToolsContainer;

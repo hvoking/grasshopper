@@ -6,12 +6,12 @@ import { OrbitControls } from '../orbitControls'
 import { Geometry } from '../geometry';
 
 // Context imports
-import { useScene } from '../../../context/SceneContext';
+import { useScene } from '../context/SceneContext';
 
 // Third-party imports
 import { WebGLRenderer, PerspectiveCamera } from 'three';
 
-const makeCamera = (fov: number =40): PerspectiveCamera => {
+const makeCamera = (fov: number = 10): PerspectiveCamera => {
 	const aspect = 2;
 	const near = 0.1;
 	const far = 1000;
@@ -39,16 +39,17 @@ export const Graph = () => {
 	useEffect(() => {
 		const camera = createNewCamera();
 		const renderer = createNewRenderer();
+
 		// Set the controls 
 		new OrbitControls( camera, renderer.domElement );
+
 		// Add elements to the html 
 		canvasRef.current && canvasRef.current.appendChild( renderer.domElement );
 	  	const animate = () => {
 		    requestAnimationFrame( animate );
 		    renderer.render( scene, camera );
-		  }
+		}
 		animate();
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
 	return (

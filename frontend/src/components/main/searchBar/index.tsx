@@ -2,7 +2,7 @@
 import './styles.scss';
 
 // Context imports
-import { useSearch } from '../../../context/SearchContext';
+import { useSearch } from '../context/SearchContext';
 
 export const SearchBar = () => {
 	const {style, searchList, currentInput, nodesList, searchNode} = useSearch()

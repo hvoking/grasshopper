@@ -2,7 +2,7 @@
 import { Node } from './Node';
 
 // Context imports
-import { usePosition } from '../../../context/MainContext';
+import { usePosition } from '../context/MainContext';
 
 export const Nodes = () => {
 	const { nodesAdded } = usePosition()

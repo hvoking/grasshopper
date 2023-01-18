@@ -52,8 +52,7 @@ export const SearchProvider = ({children}: any) => {
 	const createNode = (name: string) => {
 		const threeDefinition = THREE
 		const geo = eval(`new threeDefinition.${name}()`)
-		currentGeometrySet(geo) 
-		console.log(geo)
+		currentGeometrySet(geo)
 	}
 	const searchNode = (e: any) => {
 		e.preventDefault();
@@ -67,7 +66,7 @@ export const SearchProvider = ({children}: any) => {
 		.then(data => {
 			nodesAddedSet([...nodesAdded, data]);
 			createNode(nodeName)
-			})
+		})
 		.catch(error => console.log(error))
 	}
 

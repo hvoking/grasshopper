@@ -1,4 +1,4 @@
-const Tabs = () => {
+export const Tabs = () => {
 	return (
 		<div className="tabs">
 		  <button className="btn btn-secondary">Params</button>
@@ -16,4 +16,3 @@ const Tabs = () => {
 }
 
 Tabs.displayName="Tabs";
-export default Tabs;

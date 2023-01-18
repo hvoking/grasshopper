@@ -1,6 +1,11 @@
+// React imports
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import ExtraTools from '../ExtraTools';
+
+// App imports
+import { ExtraTools } from '../';
+
+// Third-party imports
 import { render, cleanup } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import renderer from 'react-test-renderer';

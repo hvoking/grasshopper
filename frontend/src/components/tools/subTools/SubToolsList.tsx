@@ -1,6 +1,6 @@
-import { useSearch } from '../../../context/SearchContext'
+import { useSearch } from '../../main/context/SearchContext'
 
-const SubToolsList = () => {
+export const SubToolsList = () => {
 	const {searchGeometry, allItems} = useSearch()
 	return (
  		<div className="subToolsList">
@@ -21,4 +21,3 @@ const SubToolsList = () => {
 }
 
 SubToolsList.displayName="SubToolsList"
-export default SubToolsList;

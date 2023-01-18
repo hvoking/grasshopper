@@ -1,4 +1,4 @@
-const TextTools = () => {
+export const TextTools = () => {
 	return (
 		<div className="textTools">
 		  <button>File</button>
@@ -11,4 +11,3 @@ const TextTools = () => {
 }
 
 TextTools.displayName="TextTools"
-export default TextTools;
