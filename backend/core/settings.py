@@ -21,7 +21,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'apps.grass_geometry',
+    'apps.geometries',
+    'apps.nodes',
 ]
 
 MIDDLEWARE = [

@@ -1,7 +1,7 @@
 # App imports
-from apps.grass_geometry.utils.utils import parameters, readFile, listOfGeometries
-from apps.grass_geometry.utils.regularExpressions import nodePropertiesRegex, nodeInterfaceRegex
-from apps.grass_geometry.utils.paths import *
+from apps.geometries.utils.utils import parameters, readFile, listOfGeometries
+from apps.geometries.utils.regularExpressions import nodePropertiesRegex, nodeInterfaceRegex
+from apps.geometries.utils.paths import threejsTypesPath, geometryPath
 
 # Third-party imports
 from rest_framework.decorators import api_view

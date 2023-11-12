@@ -2,10 +2,10 @@
 from os import listdir
 
 # App imports
-from apps.grass_geometry.utils.utils import readFile, nodesNames, geometriesNames
-from apps.grass_geometry.utils.regexPatterns import nodesListPattern, nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
-from apps.grass_geometry.utils.regularExpressions import *
-from apps.grass_geometry.utils.paths import *
+from apps.nodes.utils.utils import readFile, nodesNames, geometriesNames
+from apps.nodes.utils.regexPatterns import nodesListPattern, nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
+from apps.nodes.utils.regularExpressions import *
+from apps.nodes.utils.paths import threejsTypesPath, threejsGeometriesPath, threeExportationFilePath
 
 # Third-party imports
 from rest_framework.decorators import api_view
