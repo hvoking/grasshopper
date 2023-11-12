@@ -1,12 +1,15 @@
 # App imports
 from apps.geometries.utils.utils import parameters, readFile, listOfGeometries
-from apps.geometries.utils.regularExpressions import nodePropertiesRegex, nodeInterfaceRegex
 from apps.geometries.utils.paths import threejsTypesPath, geometryPath
 
 # Third-party imports
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 import re
+
+# nodes and geometries files
+nodePropertiesRegex = re.compile(r'(constructor)(.*)(\( )(.*)( \))')
+nodeInterfaceRegex = re.compile(r'(\w+)(\??:) (\w+)(?:[,\)])')
 
 # List all geometries in threejs folder
 @api_view(['GET'])
