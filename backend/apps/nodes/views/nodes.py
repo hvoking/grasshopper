@@ -4,18 +4,21 @@ from os import listdir
 # App imports
 from apps.nodes.utils.utils import readFile, nodesNames, geometriesNames
 from apps.nodes.utils.regexPatterns import nodesListPattern, nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
-from apps.nodes.utils.regularExpressions import *
 from apps.nodes.utils.paths import threejsTypesPath, threejsGeometriesPath, threeExportationFilePath
 
 # Third-party imports
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+import re
 
 # List of nodes and geometries available for search
 nodes = nodesNames(threeExportationFilePath) +  geometriesNames(threejsGeometriesPath)
 
 # File that contains all nodes available for search
 text = readFile(threeExportationFilePath)
+
+# Regular expression
+geometriesFoldersRegex = re.compile(r"(')(\w+)(')")
 
 # Set of nodes starting with requested "${node}" argument
 @api_view(['GET'])

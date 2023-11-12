@@ -1,10 +1,5 @@
 import re
 
-# nodes and geometries files
-nodePropertiesRegex = re.compile(r'(constructor)(.*)(\( )(.*)( \))')
-nodeInterfaceRegex = re.compile(r'(\w+)(\??:) (\w+)(?:[,\)])')
-geometriesFoldersRegex = re.compile(r"(')(\w+)(')")
-
 # regexPatterns file 
 nodesListRegex = re.compile(r'(constructor\()(.*)(\))')
 nodeDetailRegex = re.compile(r"(\w+)(\??:)")

@@ -1,5 +1,5 @@
 from .utils import checkNull
-from .regularExpressions import *
+from .regularExpressions import nodesListRegex, nodeDetailRegex, nodeInputRegex, nodeInputWordsRegex
 import re
 
 def nodesListPattern(node, nodes):
