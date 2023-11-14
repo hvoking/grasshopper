@@ -24,7 +24,6 @@ export const Tools = () => {
 		toolsRef.current.scrollLeft += e.deltaY
 	}
 
-
 	return (
 		<div ref={toolsRef} onWheel={onwheel} className="tools">
 			{listOfTools.map((folder: any, index: number) => { 

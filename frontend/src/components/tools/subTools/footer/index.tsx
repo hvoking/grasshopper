@@ -1,6 +1,6 @@
-import { useSearch } from '../../main/context/SearchContext'
+import { useSearch } from '../../../main/context/SearchContext'
 import { useState } from 'react';
-import { SubToolsList } from './SubToolsList';
+import { SubToolsList } from './list';
 
 interface SubToolsFooterType {
 	folder: string; 

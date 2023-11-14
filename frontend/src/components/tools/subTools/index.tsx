@@ -1,6 +1,6 @@
 // App imports
-import { SubToolsContainer } from './SubToolsContainer';
-import { SubToolsFooter } from './SubToolsFooter';
+import { SubToolsContainer } from './container';
+import { SubToolsFooter } from './footer';
 
 interface SubToolsFooterType {
 	folder: string; 

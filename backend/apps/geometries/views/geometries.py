@@ -1,6 +1,6 @@
 # App imports
-from apps.geometries.utils.utils import parameters, readFile, listOfGeometries
-from apps.geometries.utils.paths import threejsTypesPath, geometryPath
+from apps.geometries.services.utils import parameters, readFile, listOfGeometries
+from apps.geometries.services.paths import threejsTypesPath, geometryPath
 
 # Third-party imports
 from rest_framework.decorators import api_view
@@ -28,8 +28,3 @@ def geometriesDetail(request, geometry):
 	geometries = [i[0] for i in interface]
 	# types = [i[2] for i in interface]
 	return Response({"inputs": geometries, "output": geometry})
-
-# List all files in threejs folder
-@api_view(['GET'])
-def files(request, file):
-	return Response({f'{file}': listOfGeometries(threejsTypesPath + f'{file}')})

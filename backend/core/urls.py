@@ -6,4 +6,5 @@ urlpatterns = [
     path('grasshopper_manager/', admin.site.urls),
     path('', include('apps.geometries.urls')),
     path('', include('apps.nodes.urls')),
+    path('', include('apps.files.urls')),
 ]

@@ -6,6 +6,5 @@ from apps.nodes import views
 
 urlpatterns = [
 	path('nodes-list/<str:node>/', views.nodesList),
-	path('nodes-detail/<str:node>/', views.nodesDetail),
-	path('folders/', views.folders),
+	path('nodes-detail/<str:node>/', views.nodesDetail)
 ]

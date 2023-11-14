@@ -1,16 +1,19 @@
-import { useSearch } from '../../main/context/SearchContext'
+// App imports
+import { useSearch } from '../../../../main/context/SearchContext';
 
 export const SubToolsList = () => {
-	const {searchGeometry, allItems} = useSearch()
+	const {searchGeometry, allItems} = useSearch();
+
 	return (
  		<div className="subToolsList">
 			{allItems.map((item: any, index: number) => {
 				return (
-					<div 
+					<div
+						key={index} 
 						className="geometries" 
 						data-item={item} 
 						onClick={searchGeometry} 
-						key={index}>
+					>
 						<div className="hexagon"></div>
 						{item}
 					</div>
