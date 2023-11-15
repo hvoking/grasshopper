@@ -3,17 +3,9 @@ import './styles.scss';
 
 export const ExtraTools = () => {
 	return (
-		<div data-testid="extraTools" className="extraTools">
-		  <div>
-		    <div>
-		      #
-		    </div>
-		  </div>
-		  <div>
-		    <div>
-		      #
-		    </div>
-		  </div>
+		<div className="extra-tools">
+		  <div><div>#</div></div>
+		  <div><div>#</div></div>
 		</div>
 	)
 }

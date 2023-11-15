@@ -1,6 +1,9 @@
+// App imports
+import './styles.scss';
+
 export const TextTools = () => {
 	return (
-		<div className="textTools">
+		<div className="text-tools">
 		  <button>File</button>
 		  <button>Edit</button>
 		  <button>View</button>

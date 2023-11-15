@@ -1,0 +1,12 @@
+.node {
+  position: absolute;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 2fr auto auto;
+  grid-gap: 4px;
+  font-size: 0.7em;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background-color: #dfdfdf;
+  cursor: default;
+}

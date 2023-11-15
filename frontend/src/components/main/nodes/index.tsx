@@ -1,5 +1,5 @@
 // App imports
-import { Node } from './Node';
+import { Node } from './node';
 import { Spline } from './spline';
 
 // Context imports
@@ -13,7 +13,7 @@ export const Nodes = () => {
 			{nodesAdded.map((item: any, index: number) => {
 				return (
 					<>
-						<Node key={index} nodeItem={item} />
+						<Node key={index} nodeItem={item}/>
 						<Spline/>
 					</>
 				)

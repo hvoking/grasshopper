@@ -19,14 +19,8 @@ export const Footer = ({ currentTool }: any) => {
 	}
 
 	return (
-		<div 
-			className="subtools-footer-wrapper"
-			onMouseLeave={onMouseLeave} 
-		>
-			<div 
-				className="subtools-footer"
-				onMouseEnter={onMouseEnter} 
-			>
+		<div className="subtools-footer-wrapper" onMouseLeave={onMouseLeave}>
+			<div className="subtools-footer" onMouseEnter={onMouseEnter}>
 				<div>{currentTool}</div>
 				<span>&darr;</span>
 			</div>

@@ -12,6 +12,7 @@ import './styles.scss';
 
 export const Node = ({nodeItem}: {nodeItem: any}) => {
 	const nodeRef = useRef(null);
+	
 	return (
 			<>
 				{nodeItem.output && <Draggable nodeRef={nodeRef}>

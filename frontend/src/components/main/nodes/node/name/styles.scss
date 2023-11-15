@@ -1,0 +1,54 @@
+.node-name {
+  background-color: black;
+  display: grid;
+  align-items: center;
+}
+.node-name-text {
+  margin: 2px;
+  color: white;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.node-information {
+  position: absolute; 
+  z-index: 2;
+  transform: translate(60%, 55%);
+  width: 200px;
+  height: 150px;
+  display: grid;
+  grid-template-rows: 40px 30px auto;
+  grid-template-columns: 100%;
+  border: 1px solid gray;
+}
+.info {
+  background-color: #ffffc0;
+  padding: 2px;
+}
+.description {
+  background-color: #ebebb1;
+  display: grid;
+  grid-template-columns:100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-content: center;
+}
+.description-text {
+  position: relative;
+  margin: 5px;
+  padding: 4px;
+  border: 0.1em solid rgba(0,0,0,0.2);
+  border-radius: 3px;
+  box-shadow: inset -1.5px 1.5px 4px 0 rgba(0,0,0,0.2);
+}
+.hexagon {
+  background-color: black;
+  margin-left: 10px;
+}
+.title {
+  background-color: #ffd25f;
+  display: grid;
+  grid-template-columns: 30px auto;
+  grid-column-gap: 15px;
+  align-content: center;
+  font-size: 1.2em;
+}

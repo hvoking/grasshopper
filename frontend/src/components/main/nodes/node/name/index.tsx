@@ -1,5 +1,6 @@
 // React imports
 import { useState } from 'react';
+import './styles.scss';
 
 let timer: any = null;
 
@@ -16,16 +17,12 @@ export const Name = ({nodeItem}: any) => {
 	}
 
 	return (
-		<div 
-			className="nodeName" 
-			onMouseLeave={onMouseLeave} 
-			onMouseEnter={onMouseEnter}
-		>
-			<div className="nodeNameText">
+		<div className="node-name" onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter}>
+			<div className="node-name-text">
 				{nodeItem.output && nodeItem.output}
 			</div>
 			{information && 
-				<div className="nodeInformation" style={{}}>
+				<div className="node-information" style={{}}>
 					<div className="title">
 						<div className="hexagon"></div>
 						<div>{nodeItem.output && nodeItem.output}</div>
@@ -36,7 +33,7 @@ export const Name = ({nodeItem}: any) => {
 						</div>
 					</div>
 					<div className="description">
-						<div className="descriptionText">
+						<div className="description-text">
 							{nodeItem.output && nodeItem.output}
 						</div>
 					</div>

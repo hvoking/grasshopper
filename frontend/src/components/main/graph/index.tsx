@@ -46,6 +46,7 @@ export const Graph = () => {
 
 		// Add elements to the html 
 		canvasRef.current && canvasRef.current.appendChild( renderer.domElement );
+
 	  	const animate = () => {
 		    requestAnimationFrame( animate );
 		    renderer.render( scene, camera );

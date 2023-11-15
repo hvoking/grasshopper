@@ -1,3 +1,6 @@
+// App imports
+import './styles.scss';
+
 export const Tabs = () => {
 	return (
 		<div className="tabs">

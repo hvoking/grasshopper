@@ -1,0 +1,14 @@
+.text-tools {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  background-color: #f0f0f0;
+  button {
+    font-size: 0.75em;
+    border: none;
+    background: none;
+  }
+  button:hover {
+    background-color: rgba(10, 110, 220, 0.7);
+  }
+}

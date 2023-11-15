@@ -10,7 +10,7 @@ import './styles.scss';
  
 export const Tools = () => {
 	const { listOfTools } = useFoldersApi();
-	const toolsRef = useRef<any>();
+	const toolsRef = useRef<any>(null);
 
 	const onwheel = (e: any) => { 
 		toolsRef.current.scrollLeft += e.deltaY 
@@ -19,7 +19,7 @@ export const Tools = () => {
 	return (
 		<div ref={toolsRef} className="tools" onWheel={onwheel}>
 			{listOfTools.map((currentTool: any, index: number) => { 
-				return <Subtools currentTool={currentTool} index={index}/>
+				return <Subtools key={index} currentTool={currentTool}/>
 			})}
 		</div>
 	)
