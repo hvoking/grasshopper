@@ -1,7 +1,6 @@
 // App imports
 import { Nodes } from './nodes';
 import { Search } from './search';
-import { Spline } from './spline';
 import { Graph } from './graph'
 
 // Context imports
@@ -10,7 +9,7 @@ import { useSpline } from './context/spline';
 
 export const Main = () => {
 	const { deActivateSearchBox, activeSearchBox, searchBox } = useParameters();
-	const { activeSpline, setSplineEndPosition } = useSpline();
+	const { setSplineEndPosition } = useSpline();
 
 	const onMouseMove = (e: any) => {
 		setSplineEndPosition({x: e.clientX, y: e.clientY - 180});
@@ -24,7 +23,6 @@ export const Main = () => {
 			onMouseMove={onMouseMove}
 		>
 			<Graph/>
-			{activeSpline && <Spline/>}
 			{searchBox && <Search/>}
 			<Nodes/>
 		</div>

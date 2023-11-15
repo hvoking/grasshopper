@@ -2,8 +2,8 @@
 import { useEffect, useRef } from 'react';
 
 // App imports
-import { OrbitControls } from '../orbit'
-import { Geometry } from '../geometry';
+import { OrbitControls } from './orbit'
+import { Geometry } from './geometry';
 
 // Context imports
 import { useParameters } from '../context/parameters';

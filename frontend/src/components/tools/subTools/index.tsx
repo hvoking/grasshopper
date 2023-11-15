@@ -2,13 +2,13 @@
 import { Container } from './container';
 import { Footer } from './footer';
 
-export const SubTools = ({ currentTool }: any) => {
+export const Subtools = ({ index, currentTool }: any) => {
 	return (
-		<>
+		<div key={index} className="subtools">
 			<Container/>
 			<Footer currentTool={currentTool}/>
-		</>
+		</div>
 	)
 }
 
-SubTools.displayName="SubTools";
+Subtools.displayName="Subtools";

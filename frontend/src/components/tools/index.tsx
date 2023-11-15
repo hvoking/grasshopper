@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { useFoldersApi } from '../main/context/api/folders';
 
 // App imports
-import { SubTools } from './subTools';
+import { Subtools } from './subtools';
 import './styles.scss';
  
 export const Tools = () => {
@@ -23,14 +23,7 @@ export const Tools = () => {
 			className="tools"
 		>
 			{listOfTools.map((currentTool: any, index: number) => { 
-				return (
-					<div 
-						key={index} 
-						className="subTools"
-					>
-						<SubTools currentTool={currentTool} />
-					</div>
-				)
+				return <Subtools index={index} currentTool={currentTool}/>
 			})}
 		</div>
 	)

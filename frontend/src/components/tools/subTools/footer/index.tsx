@@ -10,11 +10,11 @@ export const Footer = ({ files }: any) => {
 
 	return (
 		<div 
-			className="subToolsFooterWrapper"
+			className="subtools-footer-wrapper"
 			onMouseLeave={onMouseLeave} 
 		>
 			<div 
-				className="subToolsFooter"
+				className="subtools-footer"
 				onMouseEnter={onMouseEnter} 
 			>
 				<div>{files}</div>
