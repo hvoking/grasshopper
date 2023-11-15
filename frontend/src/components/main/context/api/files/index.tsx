@@ -1,5 +1,5 @@
 // React imports
-import { useState, useContext, createContext } from 'react';
+import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
 import { useSearch } from '../../search';
@@ -15,30 +15,21 @@ export const useFilesApi = () => {
 
 export const FilesApiProvider = ({children}: any) => {
 	const { setAllItems } = useSearch();
-	const { currentFile, delay, setDelay } = useParameters();
+	const { currentFile } = useParameters();
 	
-	const [ subToolsList, setSubToolsList ] = useState<boolean>(false);
-	
-	const onMouseEnter = () => {
-		fetchFolder();
-		setDelay(setTimeout(() => setSubToolsList(true), 200))
-	}
-
-	const onMouseLeave = () => {
-		clearTimeout(delay);
-		setSubToolsList(false);
-	}
-
-	const fetchFolder = () => {
-		fetch(`http://localhost:8000/folders/${currentFile}`)
-		.then(res => res.json())
-		.then(data => {
-			setAllItems(data[currentFile]);
-		})
-	}
+	useEffect(() => {
+		const fetchFolder = () => {
+			fetch(`http://localhost:8000/folders/${currentFile}`)
+			.then(res => res.json())
+			.then(data => {
+				setAllItems(data[currentFile]);
+			})
+		}
+		currentFile && fetchFolder();
+	}, [currentFile])
 
 	return (
-		<FilesApiContext.Provider value={{ subToolsList, onMouseEnter, onMouseLeave }}>
+		<FilesApiContext.Provider value={{ }}>
 			{children}
 		</FilesApiContext.Provider>
 	)

@@ -17,13 +17,9 @@ export const Tools = () => {
 	}
 
 	return (
-		<div 
-			ref={toolsRef} 
-			onWheel={onwheel} 
-			className="tools"
-		>
+		<div ref={toolsRef} className="tools" onWheel={onwheel}>
 			{listOfTools.map((currentTool: any, index: number) => { 
-				return <Subtools index={index} currentTool={currentTool}/>
+				return <Subtools currentTool={currentTool} index={index}/>
 			})}
 		</div>
 	)

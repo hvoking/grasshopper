@@ -4,9 +4,19 @@ import './styles.scss';
 
 // Context imports
 import { useFilesApi } from '../../../main/context/api/files';
+import { useParameters } from '../../../main/context/parameters';
 
-export const Footer = ({ files }: any) => {
-	const { subToolsList, onMouseEnter, onMouseLeave } = useFilesApi();
+export const Footer = ({ currentTool }: any) => {
+	const { currentFile, setCurrentFile, delay, setDelay } = useParameters();
+
+	const onMouseEnter = () => {
+		setDelay(setTimeout(() => setCurrentFile(currentTool), 200))
+	}
+
+	const onMouseLeave = () => {
+		clearTimeout(delay);
+		setCurrentFile(null);
+	}
 
 	return (
 		<div 
@@ -17,10 +27,10 @@ export const Footer = ({ files }: any) => {
 				className="subtools-footer"
 				onMouseEnter={onMouseEnter} 
 			>
-				<div>{files}</div>
+				<div>{currentTool}</div>
 				<span>&darr;</span>
 			</div>
-			{subToolsList && <SubToolsList/>}
+			{currentFile === currentTool && <SubToolsList/>}
 		</div>
 	)
 }

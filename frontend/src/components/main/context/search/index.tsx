@@ -93,16 +93,9 @@ export const SearchProvider = ({children}: any) => {
 
 	return (
 		<SearchContext.Provider value={{
-			style, 
-			searchList, 
-			currentInput, 
-			nodesList, 
-			searchNode, 
-			searchGeometry, 
-			geometryItems,
-			allItems, 
-			setAllItems,
-			currentGeometry
+			style, searchList, currentInput, nodesList, searchNode, 
+			searchGeometry, geometryItems, currentGeometry,
+			allItems, setAllItems
 		}}>
 			{children}
 		</SearchContext.Provider>

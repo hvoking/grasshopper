@@ -6,7 +6,7 @@ export const SubToolsList = () => {
 	const { searchGeometry, allItems } = useSearch();
 
 	return (
- 		<div className="subToolsList">
+ 		<div className="subtools-list">
 			{allItems.map((item: any, index: number) => {
 				return (
 					<div

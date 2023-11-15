@@ -1,6 +1,7 @@
 // App imports
 import { Container } from './container';
 import { Footer } from './footer';
+import './styles.scss';
 
 export const Subtools = ({ index, currentTool }: any) => {
 	return (
