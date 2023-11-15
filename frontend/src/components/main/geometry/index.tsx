@@ -2,16 +2,17 @@
 import { useEffect, useState } from 'react';
 
 // Context imports
-import { useScene } from '../context/SceneContext';
-import {useSearch} from '../context/SearchContext';
+import { useParameters } from '../context/parameters';
+import { useSearch } from '../context/search';
 
 // Third-party imports
 import { Mesh, Object3D, MeshBasicMaterial, Points, PointsMaterial } from 'three';
 
 export const Geometry = () => {
-	const scene = useScene();
+	const { scene } = useParameters();
 	const { currentGeometry } = useSearch();
-	const [ listOfGeometries, listOfGeometriesSet ] = useState<any>([]);
+
+	const [ listOfGeometries, setListOfGeometries ] = useState<any>([]);
 	
 	useEffect(() => {
 		currentGeometry && createMesh();
@@ -34,11 +35,10 @@ export const Geometry = () => {
 		const points = new Points( currentGeometry, pointMaterial );
 		const mesh = new Mesh( currentGeometry, material );
 		const groupAdded = group.add(mesh, points);
-		listOfGeometriesSet([...listOfGeometries, groupAdded])
+		setListOfGeometries([...listOfGeometries, groupAdded])
 	}
 	return (
 		<div>
-			
 		</div>
 	)
 }

@@ -1,0 +1,12 @@
+.subToolsContainer {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: minmax(25px, 1fr) minmax(25px, 1fr) minmax(25px, 1fr);
+	grid-template-rows: minmax(25px, 1fr) minmax(25px, 1fr);
+	div {
+		margin: 1px;
+		border: 1px solid gray;
+		border-radius: 2px;
+	}
+}

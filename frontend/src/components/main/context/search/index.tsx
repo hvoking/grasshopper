@@ -1,5 +1,10 @@
+// React imports
 import { useState, useEffect, useContext, createContext } from 'react';
-import { usePosition } from './MainContext';
+
+// Context imports
+import { useParameters } from '../parameters';
+
+// Third-party imports
 import * as THREE from 'three';
 
 const SearchContext: React.Context<any> = createContext(null);
@@ -11,18 +16,18 @@ export const useSearch = () => {
 }
 
 export const SearchProvider = ({children}: any) => {
-	const {position, nodesAdded, nodesAddedSet, currentInputSet, currentInput} = usePosition()
-	const [nodesList, nodesListSet] = useState<string[]>([]);
-	const [geometryItems, geometryItemsSet] = useState<string[]>([])
-	const [allItems, allItemsSet] = useState<any>([])
-	const [currentGeometry, currentGeometrySet] = useState<any>(null)
+	const { position, nodesAdded, setNodesAdded, setCurrentInput, currentInput } = useParameters();
+	const [ nodesList, setNodesList ] = useState<string[]>([]);
+	const [ geometryItems, setGeometryItems ] = useState<string[]>([]);
+	const [ allItems, setAllItems ] = useState<any>([]);
+	const [ currentGeometry, setCurrentGeometry ] = useState<any>(null);
 
 	useEffect(() => {
 		const geometries = () => {
 			fetch('http://localhost:8000/geometries/')
 			.then(res => res.json())
 			.then(data => {
-				geometryItemsSet(data.geometries)
+				setGeometryItems(data.geometries)
 			})
 			.catch(error => console.log(error))
 		}
@@ -36,23 +41,23 @@ export const SearchProvider = ({children}: any) => {
 
 	const searchList: (e: React.ChangeEvent<HTMLInputElement>) => void = (e) => {
 		const input = e.currentTarget.value
-		currentInputSet(input);
+		setCurrentInput(input);
 		if (input.length > 0) {
 			fetch(`http://localhost:8000/nodes-list/${input}`)
 			.then(res => res.json())
 			.then(data => {
-				nodesListSet(data);
+				setNodesList(data);
 			})
 			.catch(error => console.log(error))
 		}
 		else {
-			nodesListSet([]);
+			setNodesList([]);
 		}
 	}
 	const createNode = (name: string) => {
 		const threeDefinition = THREE
 		const geo = eval(`new threeDefinition.${name}()`)
-		currentGeometrySet(geo)
+		setCurrentGeometry(geo)
 	}
 	const searchNode = (e: any) => {
 		e.preventDefault();
@@ -64,7 +69,7 @@ export const SearchProvider = ({children}: any) => {
 		fetch(`http://localhost:8000/${name}-detail/${nodeName}`)
 		.then(res => res.json())
 		.then(data => {
-			nodesAddedSet([...nodesAdded, data]);
+			setNodesAdded([...nodesAdded, data]);
 			createNode(nodeName)
 		})
 		.catch(error => console.log(error))
@@ -80,7 +85,7 @@ export const SearchProvider = ({children}: any) => {
 		fetch(`http://localhost:8000/${name}-detail/${geometryName}`)
 		.then(res => res.json())
 		.then(data => {
-			nodesAddedSet([...nodesAdded, data]);
+			setNodesAdded([...nodesAdded, data]);
 			createNode(geometryName)
 			})
 		.catch(error => console.log(error))
@@ -96,7 +101,7 @@ export const SearchProvider = ({children}: any) => {
 			searchGeometry, 
 			geometryItems,
 			allItems, 
-			allItemsSet,
+			setAllItems,
 			currentGeometry
 		}}>
 			{children}

@@ -2,11 +2,11 @@
 import { useEffect, useRef } from 'react';
 
 // App imports
-import { OrbitControls } from '../orbitControls'
+import { OrbitControls } from '../orbit'
 import { Geometry } from '../geometry';
 
 // Context imports
-import { useScene } from '../context/SceneContext';
+import { useParameters } from '../context/parameters';
 
 // Third-party imports
 import { WebGLRenderer, PerspectiveCamera } from 'three';
@@ -33,8 +33,9 @@ const createNewRenderer = (): WebGLRenderer => {
 }
 
 export const Graph = () => {
+	const { scene } = useParameters();
+
 	const canvasRef = useRef<null | HTMLDivElement>(null);
-	const scene = useScene();
 	
 	useEffect(() => {
 		const camera = createNewCamera();

@@ -5,9 +5,9 @@ import { useRef } from 'react';
 import Draggable from 'react-draggable';
 
 // App imports
-import { NodeOutputs } from './NodeOutputs';
-import { NodeInputs } from './NodeInputs';
-import { NodeName } from './NodeName';
+import { Outputs } from './outputs';
+import { Inputs } from './inputs';
+import { Name } from './name';
 import './styles.scss';
 
 export const Node = ({nodeItem}: {nodeItem: any}) => {
@@ -16,9 +16,9 @@ export const Node = ({nodeItem}: {nodeItem: any}) => {
 			<>
 				{nodeItem.output && <Draggable nodeRef={nodeRef}>
 					<div ref={nodeRef} className="node">
-						<NodeInputs nodeItem={nodeItem} />
-						<NodeName nodeItem={nodeItem} />
-						<NodeOutputs nodeItem={nodeItem} />
+						<Inputs nodeItem={nodeItem} />
+						<Name nodeItem={nodeItem} />
+						<Outputs nodeItem={nodeItem} />
 					</div>
 				</Draggable>}
 			</>

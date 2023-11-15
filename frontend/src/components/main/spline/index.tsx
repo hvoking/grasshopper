@@ -2,16 +2,18 @@
 import './styles.scss';
 
 // Context imports
-import { useSplinePosition, splinePositionType } from '../context/SplineContext';
+import { useSpline, splinePositionType } from '../context/spline';
 
 interface distanceType {
 	(a: splinePositionType, b: splinePositionType): number
 }
 
 export const Spline = () => {
-	const {splineStartPosition, splineEndPosition} = useSplinePosition();
-	const distance: distanceType = (a, b) => (Math.sqrt((b.x - a.x)**2 + (b.y - a.y)**2))
-	const dist = distance(splineStartPosition, splineEndPosition)
+	const {splineStartPosition, splineEndPosition} = useSpline();
+
+	const distance: distanceType = (a, b) => (Math.sqrt((b.x - a.x)**2 + (b.y - a.y)**2));
+	const dist = distance(splineStartPosition, splineEndPosition);
+
 	return (
 		<svg>
 			<path className="spline" d={`

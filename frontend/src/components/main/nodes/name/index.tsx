@@ -2,18 +2,28 @@
 import { useState } from 'react';
 
 let timer: any = null;
-export const NodeName = ({nodeItem}: any) => {
-	const [information, informationSet] = useState(false)
+
+export const Name = ({nodeItem}: any) => {
+	const [information, informationSet] = useState(false);
+
 	const onMouseEnter = () => {
 		timer = setTimeout(() => informationSet(true), 500)
 	}
+
 	const onMouseLeave = () => {
 		clearTimeout(timer);
 		informationSet(false);
 	}
+
 	return (
-		<div className="nodeName" onMouseLeave={onMouseLeave} onMouseEnter={onMouseEnter}>
-			<div className="nodeNameText">{nodeItem.output && nodeItem.output}</div>
+		<div 
+			className="nodeName" 
+			onMouseLeave={onMouseLeave} 
+			onMouseEnter={onMouseEnter}
+		>
+			<div className="nodeNameText">
+				{nodeItem.output && nodeItem.output}
+			</div>
 			{information && 
 				<div className="nodeInformation" style={{}}>
 					<div className="title">
@@ -35,4 +45,4 @@ export const NodeName = ({nodeItem}: any) => {
 	)
 }
 
-NodeName.displayName="NodeName";
+Name.displayName="Name";

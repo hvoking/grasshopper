@@ -1,35 +1,34 @@
 // React imports
-import { useState, useEffect, useRef } from 'react';
+import { useRef } from 'react';
+
+// Context imports
+import { useFoldersApi } from '../main/context/api/folders';
 
 // App imports
 import { SubTools } from './subTools';
 import './styles.scss';
  
 export const Tools = () => {
-	const [listOfTools, listOfToolsSet] = useState<string[]>([])
-	const toolsRef = useRef<any>()
+	const { listOfTools } = useFoldersApi();
+	const toolsRef = useRef<any>();
 
-	useEffect(() => {
-		const getFolders = () => {
-			fetch('http://localhost:8000/folders/')
-			.then(res => res.json())
-			.then(data => {
-				listOfToolsSet(data.folders)
-			})
-		}
-		getFolders();
-	}, [])
-
-	const onwheel = (e: any) => {
-		toolsRef.current.scrollLeft += e.deltaY
+	const onwheel = (e: any) => { 
+		toolsRef.current.scrollLeft += e.deltaY 
 	}
 
 	return (
-		<div ref={toolsRef} onWheel={onwheel} className="tools">
-			{listOfTools.map((folder: any, index: number) => { 
+		<div 
+			ref={toolsRef} 
+			onWheel={onwheel} 
+			className="tools"
+		>
+			{listOfTools.map((currentTool: any, index: number) => { 
 				return (
-					<div key={index} className="subTools">
-						<SubTools folder={folder} />
+					<div 
+						key={index} 
+						className="subTools"
+					>
+						<SubTools currentTool={currentTool} />
 					</div>
 				)
 			})}

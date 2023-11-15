@@ -1,21 +1,21 @@
 // App imports
-// import { Geometry } from '../geometry';
 import { Nodes } from './nodes';
-import { SearchBar } from './searchBar';
+import { Search } from './search';
 import { Spline } from './spline';
 import { Graph } from './graph'
 
 // Context imports
-import { useScene } from './context/SceneContext';
-import { usePosition } from './context/MainContext';
-import { useSplinePosition } from './context/SplineContext';
+import { useParameters } from './context/parameters';
+import { useSpline } from './context/spline';
 
 export const Main = () => {
-	const { deActivateSearchBox, activeSearchBox, searchBox } = usePosition()
-	const { activeSpline, splineEndPositionSet } = useSplinePosition()
+	const { deActivateSearchBox, activeSearchBox, searchBox } = useParameters();
+	const { activeSpline, setSplineEndPosition } = useSpline();
+
 	const onMouseMove = (e: any) => {
-		splineEndPositionSet({x: e.clientX, y: e.clientY - 180});
-	}	
+		setSplineEndPosition({x: e.clientX, y: e.clientY - 180});
+	};
+
 	return (
 		<div
 			className="main" 
@@ -25,10 +25,9 @@ export const Main = () => {
 		>
 			<Graph/>
 			{activeSpline && <Spline/>}
-			{searchBox && <SearchBar/>}
+			{searchBox && <Search/>}
 			<Nodes/>
 		</div>
-			
 	)
 }
 

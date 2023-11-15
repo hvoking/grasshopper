@@ -1,47 +1,28 @@
-import { useSearch } from '../../../main/context/SearchContext'
-import { useState } from 'react';
+// App imports
 import { SubToolsList } from './list';
+import './styles.scss';
 
-interface SubToolsFooterType {
-	folder: string; 
-}
+// Context imports
+import { useFilesApi } from '../../../main/context/api/files';
 
-export const SubToolsFooter = ({folder}: SubToolsFooterType) => {
-	const [subToolsList, subToolsListSet] = useState<boolean>(false)
-	const [delay, delaySet] = useState<any>(null)
-	const {allItemsSet} = useSearch()
-
-	const onMouseEnter = () => {
-		fetchFolder();
-		delaySet(setTimeout(() => subToolsListSet(true), 200))
-	}
-
-	const onMouseLeave = () => {
-		clearTimeout(delay);
-		subToolsListSet(false);
-	}
-
-	const fetchFolder = () => {
-		fetch(`http://localhost:8000/folders/${folder}`)
-		.then(res => res.json())
-		.then(data => {
-			allItemsSet(data[folder]);
-		})
-	}
+export const Footer = ({ files }: any) => {
+	const { subToolsList, onMouseEnter, onMouseLeave } = useFilesApi();
 
 	return (
-		<div onMouseLeave={onMouseLeave} className="subToolsFooterWrapper">
-			<div onMouseEnter={onMouseEnter} className="subToolsFooter">
-				<div>
-					{folder}
-				</div>
+		<div 
+			className="subToolsFooterWrapper"
+			onMouseLeave={onMouseLeave} 
+		>
+			<div 
+				className="subToolsFooter"
+				onMouseEnter={onMouseEnter} 
+			>
+				<div>{files}</div>
 				<span>&darr;</span>
 			</div>
-			{subToolsList && 
-				<SubToolsList />
-			}
+			{subToolsList && <SubToolsList/>}
 		</div>
 	)
 }
 
-SubToolsFooter.displayName="SubToolsFooter";
+Footer.displayName="Footer";

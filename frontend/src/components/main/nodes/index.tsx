@@ -2,10 +2,11 @@
 import { Node } from './Node';
 
 // Context imports
-import { usePosition } from '../context/MainContext';
+import { useParameters } from '../context/parameters';
 
 export const Nodes = () => {
-	const { nodesAdded } = usePosition()
+	const { nodesAdded } = useParameters();
+	
 	return (
 		<>
 			{nodesAdded.map((item: any, index: number) => {

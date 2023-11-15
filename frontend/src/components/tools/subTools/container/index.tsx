@@ -1,6 +1,9 @@
+// App imports
+import './styles.scss';
+
 const files = ['Hello', 'this', 'are', 'the', 'folders', 'yey']
 
-export const SubToolsContainer = () => {
+export const Container = () => {
 	return (
 		<div className="subToolsContainer">
 			{
@@ -16,4 +19,4 @@ export const SubToolsContainer = () => {
 	)
 }
 
-SubToolsContainer.displayName="SubToolsContainer";
+Container.displayName="Container";

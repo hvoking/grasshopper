@@ -1,16 +1,12 @@
 // App imports
-import { SubToolsContainer } from './container';
-import { SubToolsFooter } from './footer';
+import { Container } from './container';
+import { Footer } from './footer';
 
-interface SubToolsFooterType {
-	folder: string; 
-}
-
-export const SubTools = ({folder}: SubToolsFooterType) => {
+export const SubTools = ({ currentTool }: any) => {
 	return (
 		<>
-			<SubToolsContainer />
-			<SubToolsFooter folder={folder} />
+			<Container/>
+			<Footer currentTool={currentTool}/>
 		</>
 	)
 }

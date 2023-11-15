@@ -2,9 +2,9 @@
 import './styles.scss';
 
 // Context imports
-import { useSearch } from '../context/SearchContext';
+import { useSearch } from '../context/search';
 
-export const SearchBar = () => {
+export const Search = () => {
 	const {style, searchList, currentInput, nodesList, searchNode} = useSearch()
 	
 	return (
@@ -28,4 +28,4 @@ export const SearchBar = () => {
 	)
 }
 
-SearchBar.displayName="SearchBar"
+Search.displayName="Search"

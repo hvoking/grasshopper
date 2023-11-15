@@ -22,7 +22,6 @@
 }
 
 .subTools {
-	// position: relative;
 	display: grid;
 	grid-template-rows: 80% 20%;
 	font-size: 0.6em;
@@ -38,45 +37,4 @@
 	height: 100%;
 	background-color: black;
 	border-radius: 0px 0px 4px 4px;
-}
-
-.subToolsFooter {
-	display: grid;
-	grid-template-columns: 90% 10%;
-	text-align: center;
-	width: 100%;
-	height: 100%;
-	color: white;
-}
-
-.subToolsContainer {
-	width: 100%;
-	height: 100%;
-	display: grid;
-	grid-template-columns: minmax(25px, 1fr) minmax(25px, 1fr) minmax(25px, 1fr);
-	grid-template-rows: minmax(25px, 1fr) minmax(25px, 1fr);
-	div {
-		margin: 1px;
-		border: 1px solid gray;
-		border-radius: 2px;
-	}
-}
-
-.subToolsList {
-	position: absolute;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	font-size: 1.2em;
-	align-items: center;
-	background-color: #dfdfdf;
-	color: #333333;
-	border: 1px solid gray;
-	border-radius: 4px;
-	div {
-		&:hover {
-			background-color: #eeeeee;
-		}
-		padding: 10px;
-	}
-	z-index: 1;
 }

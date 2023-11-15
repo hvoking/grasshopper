@@ -1,4 +1,4 @@
-export const NodeInputs = ({nodeItem}: any) => {
+export const Inputs = ({nodeItem}: any) => {
 	return (
 		<div className="nodeInputs">
 			{nodeItem.inputs && nodeItem.inputs.map((item: any, index: number) => {
@@ -12,4 +12,4 @@ export const NodeInputs = ({nodeItem}: any) => {
 	)
 }
 
-NodeInputs.displayName="NodeInputs";
+Inputs.displayName="Inputs";

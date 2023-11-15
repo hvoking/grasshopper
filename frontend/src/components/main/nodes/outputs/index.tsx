@@ -2,15 +2,18 @@
 import { useRef } from 'react';
 
 // Context imports
-import { useSplinePosition } from '../context/SplineContext';
+import { useSpline } from '../../context/spline';
 
-export const NodeOutputs = ({nodeItem}: any) => {
-	const outputKnob = useRef<any>(null)
-	const {startTransmitting, splineStartPositionSet, activeSplineSet} = useSplinePosition()
+export const Outputs = ({nodeItem}: any) => {
+	const { startTransmitting, setSplineStartPosition, setActiveSpline } = useSpline();
+
+	const outputKnob = useRef<any>(null);
+
 	const activateSpline = (e: any) => {
-		splineStartPositionSet({x: e.clientX, y: e.clientY - 179});
-		activeSplineSet(true);
+		setSplineStartPosition({x: e.clientX, y: e.clientY - 179});
+		setActiveSpline(true);
 	}
+
 	return (
 		<div className="nodeOutputs">
 			<div className="outputItem">{nodeItem.output && nodeItem.output[0]}
@@ -19,11 +22,11 @@ export const NodeOutputs = ({nodeItem}: any) => {
 					className="after" 
 					onClick={activateSpline}
 					onMouseOut={startTransmitting}
-					>
+				>
 				</span>
 			</div>
 		</div>
 	)
 }
 
-NodeOutputs.displayName="NodeOutputs";
+Outputs.displayName="Outputs";
