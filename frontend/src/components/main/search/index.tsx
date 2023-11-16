@@ -1,31 +1,36 @@
 // App imports
+import { NodesList } from './nodes';
+import { NodesInputs } from './inputs';
 import './styles.scss';
 
 // Context imports
-import { useSearch } from '../context/search';
+import { useSearch } from '../../context/search';
+import { useParameters } from '../../context/parameters';
 
 export const Search = () => {
-	const {style, searchList, currentInput, nodesList, searchNode} = useSearch()
-	
+	const { searchList, currentInput, nodesList, searchNode } = useSearch();
+	const { position, searchBox } = useParameters();
+
+	const x = position.x - 100;
+	const y = position.y - 40;
+
+	if (!searchBox) return <></>
+
 	return (
-		<div style={style} className="searchBox">
-			<label className="nodeLabel" htmlFor="searchBox">Enter a keyword...</label>
-			<input 
-				onChange={searchList}
-				className="inputNode" 
-				id="searchBox" 
-				type="text" 
-				placeholder="Search" 
-				autoFocus
-				value={currentInput}
-				/>
-			{nodesList.nodes && nodesList.nodes.map((node: any, index: number) => {
-				return (
-					<div className="nodeItem" onClick={searchNode} key={index}>{node}</div>
-				)
-			})}
+		<div className="search-box" style={{left: x, top: y}}>
+			<label className="node-label" htmlFor="search-box">
+				Enter a keyword...
+			</label>
+			<NodesInputs
+				searchList={searchList} 
+				currentInput={currentInput}
+			/>
+			<NodesList 
+				nodesList={nodesList.nodes} 
+				searchNode={searchNode}
+			/>
 		</div>
 	)
 }
 
-Search.displayName="Search"
+Search.displayName="Search";

@@ -16,3 +16,10 @@
 	}
 	z-index: 1;
 }
+.geometries {
+	display: grid;
+	grid-template-columns: 30px auto 30px auto;
+	grid-template-rows: 15px;
+	align-items: center;
+	grid-gap: 5px;
+}

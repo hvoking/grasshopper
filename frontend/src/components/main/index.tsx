@@ -1,29 +1,32 @@
 // App imports
 import { Nodes } from './nodes';
 import { Search } from './search';
-import { Graph } from './graph'
+import { Graph } from './graph';
+import './styles.scss';
 
 // Context imports
-import { useParameters } from './context/parameters';
-import { useSpline } from './context/spline';
+import { useParameters } from '../context/parameters';
+import { useSpline } from '../context/spline';
 
 export const Main = () => {
-	const { deActivateSearchBox, activeSearchBox, searchBox } = useParameters();
+	const { deActivateSearchBox, activeSearchBox } = useParameters();
 	const { setSplineEndPosition } = useSpline();
 
 	const onMouseMove = (e: any) => {
-		setSplineEndPosition({x: e.clientX, y: e.clientY - 180});
+		const x = e.clientX;
+		const y = e.clientY - 180;
+		setSplineEndPosition({x: x, y: y});
 	};
 
 	return (
 		<div
-			className="main" 
+			className="main-wrapper" 
 			onClick={deActivateSearchBox} 
 			onDoubleClick={activeSearchBox}
 			onMouseMove={onMouseMove}
 		>
 			<Graph/>
-			{searchBox && <Search/>}
+			<Search/>
 			<Nodes/>
 		</div>
 	)

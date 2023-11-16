@@ -6,7 +6,7 @@ import { OrbitControls } from './orbit'
 import { Geometry } from './geometry';
 
 // Context imports
-import { useParameters } from '../context/parameters';
+import { useParameters } from '../../context/parameters';
 
 // Third-party imports
 import { WebGLRenderer, PerspectiveCamera } from 'three';
@@ -17,6 +17,7 @@ const makeCamera = (fov: number = 10): PerspectiveCamera => {
 	const far = 1000;
 	return new PerspectiveCamera(fov, aspect, near, far);
 }
+
 const createNewCamera = () => {
 	const camera = makeCamera();
 	camera.position.set(2, 2, 2).multiplyScalar(8);

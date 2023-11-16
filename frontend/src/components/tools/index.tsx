@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 
 // Context imports
-import { useFoldersApi } from '../main/context/api/folders';
+import { useFoldersApi } from '../context/api/folders';
 
 // App imports
 import { Subtools } from './subtools';

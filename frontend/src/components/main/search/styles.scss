@@ -1,5 +1,5 @@
 // SearchBox
-.searchBox {
+.search-box {
   position: fixed;
   display: grid;
   grid-template-columns: 200px;
@@ -7,7 +7,7 @@
   border: 1px solid black;
 }
 
-.nodeLabel {
+.node-label {
   display: grid;
   justify-content: center;
   align-content: center;
@@ -16,17 +16,17 @@
   font-style: italic;
   border-bottom: 1px solid black;
 }
-.inputNode {
+.input-node {
   text-align: center;
   background-color: white;
   font-family: "Segoe UI";
   border: none;
 }
-.inputNode:focus {
+.input-node:focus {
     outline: none;
 }
 
-.nodeItem {
+.node-item {
   background-color: #EEEEEE;
   color: gray;
   cursor: pointer;

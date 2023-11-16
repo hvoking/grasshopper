@@ -3,7 +3,7 @@ import { Node } from './node';
 import { Spline } from './spline';
 
 // Context imports
-import { useParameters } from '../context/parameters';
+import { useParameters } from '../../context/parameters';
 
 export const Nodes = () => {
 	const { nodesAdded } = useParameters();

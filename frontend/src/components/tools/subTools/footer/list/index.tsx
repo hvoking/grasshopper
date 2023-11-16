@@ -1,5 +1,5 @@
 // App imports
-import { useSearch } from '../../../../main/context/search';
+import { useSearch } from '../../../../context/search';
 import './styles.scss';
 
 export const SubToolsList = () => {

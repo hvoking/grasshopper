@@ -1,13 +1,6 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    background: transparent;
 }
 .wrapper {
   display: grid;
@@ -18,21 +11,13 @@ body {
   font-family: "Segoe UI";
   overflow: hidden;
 }
-.header {
-  font-size: 0.9em;
-}
-.main {
-  width: 100%;
-  height: 100%;
-  background-color: #d4d0c8;
-  overflow: hidden;
-  position: relative
-}
-.main:active {
-  cursor: grabbing;
-}
 canvas {
   width: 100%;
   height: 100%;
   position: absolute;
+}
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
 }

@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import './styles.scss';
 
 // Context imports
-import { useSpline } from '../../../context/spline';
+import { useSpline } from '../../../../context/spline';
 
 export const Outputs = ({nodeItem}: any) => {
 	const { startTransmitting, setSplineStartPosition, setActiveSpline } = useSpline();
@@ -19,7 +19,10 @@ export const Outputs = ({nodeItem}: any) => {
 
 	return (
 		<div className="node-outputs">
-			<div className="output-item">{nodeItem.output && nodeItem.output[0]}
+			<div className="output-item">
+				<div>
+					{nodeItem.output && nodeItem.output[0]}
+				</div>
 				<span 
 					ref={outputKnob} 
 					className="after" 

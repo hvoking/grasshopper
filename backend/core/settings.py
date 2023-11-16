@@ -1,5 +1,8 @@
+# System imports
 import os
 from pathlib import Path
+
+# Third-party imports
 from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -96,6 +99,4 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-]
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000']

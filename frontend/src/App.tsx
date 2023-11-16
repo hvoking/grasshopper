@@ -4,16 +4,17 @@ import { TextTools } from './components/tools/text';
 import { Tabs } from './components/tools/tabs';
 import { Tools } from './components/tools';
 import { ExtraTools } from './components/tools/extra';
+import { Header } from './components/tools/header';
 import './styles.scss';
 
 // Context providers
-import { MainProvider } from './components/main/context';
+import { MainProvider } from './components/context';
 
 export const App = () => {
   return (
     <div className="wrapper">
-      <div className="header">Grasshopper - unnamed</div>
       <MainProvider>
+        <Header/>
         <TextTools/>
         <Tabs/>
         <Tools/>

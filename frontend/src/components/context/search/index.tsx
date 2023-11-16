@@ -16,14 +16,14 @@ export const useSearch = () => {
 }
 
 export const SearchProvider = ({children}: any) => {
-	const { position, nodesAdded, setNodesAdded, setCurrentInput, currentInput } = useParameters();
+	const { nodesAdded, setNodesAdded, setCurrentInput, currentInput } = useParameters();
 	const [ nodesList, setNodesList ] = useState<string[]>([]);
 	const [ geometryItems, setGeometryItems ] = useState<string[]>([]);
 	const [ allItems, setAllItems ] = useState<any>([]);
 	const [ currentGeometry, setCurrentGeometry ] = useState<any>(null);
 
 	useEffect(() => {
-		const geometries = () => {
+		const fetchData = () => {
 			fetch('http://localhost:8000/geometries/')
 			.then(res => res.json())
 			.then(data => {
@@ -31,13 +31,8 @@ export const SearchProvider = ({children}: any) => {
 			})
 			.catch(error => console.log(error))
 		}
-		geometries()
-	}, [])
-
-	const style = {
-		left: position.x - 100, 
-		top: position.y - 40
-	}
+		fetchData()
+	}, []);
 
 	const searchList: (e: React.ChangeEvent<HTMLInputElement>) => void = (e) => {
 		const input = e.currentTarget.value
@@ -93,7 +88,7 @@ export const SearchProvider = ({children}: any) => {
 
 	return (
 		<SearchContext.Provider value={{
-			style, searchList, currentInput, nodesList, searchNode, 
+			searchList, currentInput, nodesList, searchNode, 
 			searchGeometry, geometryItems, currentGeometry,
 			allItems, setAllItems
 		}}>

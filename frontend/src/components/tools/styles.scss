@@ -1,15 +1,3 @@
-.geometries {
-	display: grid;
-	grid-template-columns: 30px auto 30px auto;
-	grid-template-rows: 15px;
-	align-items: center;
-	grid-gap: 5px;
-}
-
-.hexagon {
-	background-color: black;
-}
-
 .tools {
 	overflow-y: auto;
 	width: 100%;

@@ -2,8 +2,8 @@
 import { useEffect, useState } from 'react';
 
 // Context imports
-import { useParameters } from '../../context/parameters';
-import { useSearch } from '../../context/search';
+import { useParameters } from '../../../context/parameters';
+import { useSearch } from '../../../context/search';
 
 // Third-party imports
 import { Mesh, Object3D, MeshBasicMaterial, Points, PointsMaterial } from 'three';
