@@ -9,13 +9,11 @@ export const useSpline = () => {
 	)
 }
 
-export interface splinePositionType { x: number; y: number; }
-
 export const SplineProvider = ({children}: any) => {
-	const [ splineStartPosition, setSplineStartPosition ] = useState<splinePositionType>({x: 0, y: 0});
-	const [ splineEndPosition, setSplineEndPosition ] = useState<splinePositionType>({x: 0, y: 0});
-	const [ activeSpline, setActiveSpline ] = useState<boolean>(false);
-	const [ transmitting, setTransmitting ] = useState<boolean>(false);
+	const [ splineStartPosition, setSplineStartPosition ] = useState({x: 0, y: 0});
+	const [ splineEndPosition, setSplineEndPosition ] = useState({x: 0, y: 0});
+	const [ activeSpline, setActiveSpline ] = useState(false);
+	const [ transmitting, setTransmitting ] = useState(false);
 	
 	const activateSpline = () => { setActiveSpline(true) };
 	const startTransmitting: () => void = () => { setTransmitting(prev => !prev) };

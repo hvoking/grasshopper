@@ -1,6 +1,7 @@
 // Context imports
 import { useSearch } from '../../../context/search';
 import { useSearchApi } from '../../../context/api/search';
+import './styles.scss';
 
 export const NodesList = () => {
 	const { searchNode } = useSearch();

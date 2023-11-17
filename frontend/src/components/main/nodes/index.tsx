@@ -12,10 +12,10 @@ export const Nodes = () => {
 		<>
 			{nodesAdded.map((item: any, index: number) => {
 				return (
-					<>
-						<Node key={index} nodeItem={item}/>
+					<div key={index}>
+						<Node nodeItem={item}/>
 						<Spline/>
-					</>
+					</div>
 				)
 			})}
 		</>

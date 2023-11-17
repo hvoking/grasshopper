@@ -16,9 +16,6 @@ export const Search = () => {
 
 	return (
 		<div className="search-box" style={{left: x, top: y}}>
-			<label className="node-label" htmlFor="search-box">
-				Enter a keyword...
-			</label>
 			<NodesInputs/>
 			<NodesList/>
 		</div>

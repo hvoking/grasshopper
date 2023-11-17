@@ -6,33 +6,3 @@
   grid-template-rows: 30px 16px;
   border: 1px solid black;
 }
-
-.node-label {
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  font-size: 0.6em;
-  background-color: #f0f0f0;
-  font-style: italic;
-  border-bottom: 1px solid black;
-}
-.input-node {
-  text-align: center;
-  background-color: white;
-  font-family: "Segoe UI";
-  border: none;
-}
-.input-node:focus {
-    outline: none;
-}
-
-.node-item {
-  background-color: #EEEEEE;
-  color: gray;
-  cursor: pointer;
-  &:hover {
-    background-color: #CCCCCC;
-    color: black;
-
-  }
-}

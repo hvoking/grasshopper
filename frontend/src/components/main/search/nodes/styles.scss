@@ -1,0 +1,10 @@
+.node-item {
+  background-color: #EEEEEE;
+  color: gray;
+  cursor: pointer;
+  &:hover {
+    background-color: #CCCCCC;
+    color: black;
+
+  }
+}

@@ -2,7 +2,12 @@
 import './styles.scss';
 
 // Context imports
-import { useSpline, splinePositionType } from '../../../context/spline';
+import { useSpline } from '../../../context/spline';
+
+interface splinePositionType { 
+	x: number; 
+	y: number; 
+};
 
 interface distanceType {
 	(a: splinePositionType, b: splinePositionType): number

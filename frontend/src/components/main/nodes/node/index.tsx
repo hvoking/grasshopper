@@ -14,16 +14,13 @@ export const Node = ({nodeItem}: {nodeItem: any}) => {
 	const nodeRef = useRef(null);
 	
 	return (
-			<>
-				{nodeItem.output && <Draggable nodeRef={nodeRef}>
-					<div ref={nodeRef} className="node">
-						<Inputs nodeItem={nodeItem} />
-						<Name nodeItem={nodeItem} />
-						<Outputs nodeItem={nodeItem} />
-					</div>
-				</Draggable>}
-			</>
-		
+		<Draggable nodeRef={nodeRef}>
+			<div ref={nodeRef} className="node">
+				<Inputs nodeItem={nodeItem} />
+				<Name nodeItem={nodeItem} />
+				<Outputs nodeItem={nodeItem} />
+			</div>
+		</Draggable>
 	)
 }
 
