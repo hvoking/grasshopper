@@ -2,7 +2,6 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useSearch } from '../../search';
 import { useParameters } from '../../parameters';
 
 const FilesApiContext: React.Context<any> = createContext(null)
@@ -14,8 +13,7 @@ export const useFilesApi = () => {
 }
 
 export const FilesApiProvider = ({children}: any) => {
-	const { setAllItems } = useSearch();
-	const { currentFile } = useParameters();
+	const { setAllItems, currentFile } = useParameters();
 	
 	useEffect(() => {
 		const fetchFolder = () => {

@@ -7,13 +7,13 @@ import { ApiProvider } from './api';
 export const MainProvider = ({children}: any) => {
   return (
     <ParametersProvider>
-    <SearchProvider>
     <SplineProvider>
     <ApiProvider>
+    <SearchProvider>
       {children}
+    </SearchProvider>
     </ApiProvider>
     </SplineProvider>
-    </SearchProvider>
     </ParametersProvider>
   )
 }

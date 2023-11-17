@@ -23,6 +23,7 @@ export const ParametersProvider = ({children}: any) => {
 	const [ scene, setScene ] = useState<Scene>(new Scene());
 	const [ delay, setDelay ] = useState<any>(null);
 	const [ currentFile, setCurrentFile ] = useState<any>(null);
+	const [ allItems, setAllItems ] = useState<any>([]);
 
 	const activeSearchBox: searchBoxType = (e) => {
 		setSearchBox(true);
@@ -42,6 +43,7 @@ export const ParametersProvider = ({children}: any) => {
 			searchBox, position, scene,
 			delay, setDelay,
 			currentFile, setCurrentFile,
+			allItems, setAllItems
 		}}>
 			{children}
 		</ParametersContext.Provider>

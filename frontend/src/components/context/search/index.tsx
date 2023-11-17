@@ -3,6 +3,7 @@ import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
 import { useParameters } from '../parameters';
+import { useGeometriesApi } from '../api/geometries';
 
 // Third-party imports
 import * as THREE from 'three';
@@ -18,21 +19,9 @@ export const useSearch = () => {
 export const SearchProvider = ({children}: any) => {
 	const { nodesAdded, setNodesAdded, setCurrentInput, currentInput } = useParameters();
 	const [ nodesList, setNodesList ] = useState<string[]>([]);
-	const [ geometryItems, setGeometryItems ] = useState<string[]>([]);
-	const [ allItems, setAllItems ] = useState<any>([]);
 	const [ currentGeometry, setCurrentGeometry ] = useState<any>(null);
 
-	useEffect(() => {
-		const fetchData = () => {
-			fetch('http://localhost:8000/geometries/')
-			.then(res => res.json())
-			.then(data => {
-				setGeometryItems(data.geometries)
-			})
-			.catch(error => console.log(error))
-		}
-		fetchData()
-	}, []);
+	const { geometriesData } = useGeometriesApi();
 
 	const searchList: (e: React.ChangeEvent<HTMLInputElement>) => void = (e) => {
 		const input = e.currentTarget.value
@@ -58,7 +47,7 @@ export const SearchProvider = ({children}: any) => {
 		e.preventDefault();
 		const nodeName = e.currentTarget.innerHTML
 		let name = 'nodes'
-		if (geometryItems.includes(nodeName)) {
+		if (geometriesData.includes(nodeName)) {
 			name = 'geometries'
 		}
 		fetch(`http://localhost:8000/${name}-detail/${nodeName}`)
@@ -74,7 +63,7 @@ export const SearchProvider = ({children}: any) => {
 		e.preventDefault();
 		const geometryName = e.currentTarget.dataset.item
 		let name = 'nodes'
-		if (geometryItems.includes(geometryName)) {
+		if (geometriesData.includes(geometryName)) {
 			name = 'geometries'
 		}
 		fetch(`http://localhost:8000/${name}-detail/${geometryName}`)
@@ -89,8 +78,7 @@ export const SearchProvider = ({children}: any) => {
 	return (
 		<SearchContext.Provider value={{
 			searchList, currentInput, nodesList, searchNode, 
-			searchGeometry, geometryItems, currentGeometry,
-			allItems, setAllItems
+			searchGeometry, currentGeometry
 		}}>
 			{children}
 		</SearchContext.Provider>

@@ -1,9 +1,11 @@
 // App imports
 import { useSearch } from '../../../../context/search';
+import { useParameters } from '../../../../context/parameters';
 import './styles.scss';
 
 export const SubToolsList = () => {
-	const { searchGeometry, allItems } = useSearch();
+	const { allItems } = useParameters();
+	const { searchGeometry } = useSearch();
 
 	return (
  		<div className="subtools-list">
