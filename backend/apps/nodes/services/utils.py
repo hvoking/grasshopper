@@ -4,9 +4,6 @@ import os
 # Third-party imports
 import re
 
-def checkNull(regexItem):
-	return '' if regexItem == None else regexItem
-
 def readFile(path):
 	with open(path, 'r', encoding = 'utf8') as f:
 		text = f.read()
