@@ -1,5 +1,5 @@
 # App imports
-from apps.geometries.services.utils import parameters
+from apps.geometries.services import parameters_service
 from apps.geometries.services.paths import geometryPath
 
 # Third-party imports
@@ -11,4 +11,4 @@ nodePropertiesRegex = re.compile(r'(constructor)(.*)(\( )(.*)( \))')
 
 @api_view(['GET'])
 def geometriesWithParameters(request):
-	return Response(parameters(geometryPath, nodePropertiesRegex))
+	return Response(parameters_service.get_parameters(geometryPath, nodePropertiesRegex))
