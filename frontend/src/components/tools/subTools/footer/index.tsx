@@ -3,7 +3,6 @@ import { SubToolsList } from './list';
 import './styles.scss';
 
 // Context imports
-import { useFilesApi } from '../../../context/api/files';
 import { useParameters } from '../../../context/parameters';
 
 export const Footer = ({ currentTool }: any) => {

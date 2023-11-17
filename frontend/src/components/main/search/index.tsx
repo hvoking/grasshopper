@@ -6,9 +6,11 @@ import './styles.scss';
 // Context imports
 import { useSearch } from '../../context/search';
 import { useParameters } from '../../context/parameters';
+import { useSearchApi } from '../../context/api/search';
 
 export const Search = () => {
-	const { searchList, currentInput, nodesList, searchNode } = useSearch();
+	const { currentInput, searchNode } = useSearch();
+	const { searchData } = useSearchApi();
 	const { position, searchBox } = useParameters();
 
 	const x = position.x - 100;
@@ -21,12 +23,9 @@ export const Search = () => {
 			<label className="node-label" htmlFor="search-box">
 				Enter a keyword...
 			</label>
-			<NodesInputs
-				searchList={searchList} 
-				currentInput={currentInput}
-			/>
+			<NodesInputs currentInput={currentInput}/>
 			<NodesList 
-				nodesList={nodesList.nodes} 
+				nodesList={searchData.nodes} 
 				searchNode={searchNode}
 			/>
 		</div>

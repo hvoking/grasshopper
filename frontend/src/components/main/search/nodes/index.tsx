@@ -1,6 +1,5 @@
-export const NodesList = ({nodesList, searchNode}: any) => {
+export const NodesList = ({ nodesList, searchNode }: any) => {
 	if (!nodesList) return <></>
-		
 	return (
 		<>
 			{nodesList.map((node: any, index: number) => {
