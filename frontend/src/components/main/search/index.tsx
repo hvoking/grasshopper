@@ -4,13 +4,9 @@ import { NodesInputs } from './inputs';
 import './styles.scss';
 
 // Context imports
-import { useSearch } from '../../context/search';
 import { useParameters } from '../../context/parameters';
-import { useSearchApi } from '../../context/api/search';
 
 export const Search = () => {
-	const { currentInput, searchNode } = useSearch();
-	const { searchData } = useSearchApi();
 	const { position, searchBox } = useParameters();
 
 	const x = position.x - 100;
@@ -23,11 +19,8 @@ export const Search = () => {
 			<label className="node-label" htmlFor="search-box">
 				Enter a keyword...
 			</label>
-			<NodesInputs currentInput={currentInput}/>
-			<NodesList 
-				nodesList={searchData.nodes} 
-				searchNode={searchNode}
-			/>
+			<NodesInputs/>
+			<NodesList/>
 		</div>
 	)
 }

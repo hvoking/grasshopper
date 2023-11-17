@@ -17,7 +17,7 @@ export const useSearch = () => {
 }
 
 export const SearchProvider = ({children}: any) => {
-	const { nodesAdded, setNodesAdded, setCurrentInput } = useParameters();
+	const { nodesAdded, setNodesAdded } = useParameters();
 	const [ currentGeometry, setCurrentGeometry ] = useState<any>(null);
 
 	const { geometriesData } = useGeometriesApi();
@@ -27,6 +27,7 @@ export const SearchProvider = ({children}: any) => {
 		const geo = eval(`new threeDefinition.${name}()`)
 		setCurrentGeometry(geo)
 	}
+	
 	const searchNode = (e: any) => {
 		e.preventDefault();
 		const nodeName = e.currentTarget.innerHTML
@@ -60,10 +61,7 @@ export const SearchProvider = ({children}: any) => {
 	}
 
 	return (
-		<SearchContext.Provider value={{
-			searchNode, 
-			searchGeometry, currentGeometry
-		}}>
+		<SearchContext.Provider value={{ searchNode, searchGeometry, currentGeometry }}>
 			{children}
 		</SearchContext.Provider>
 	)

@@ -1,7 +1,7 @@
 import { useParameters } from '../../../context/parameters';
 
-export const NodesInputs = ({ currentInput }: any) => {
-	const { setCurrentInput } = useParameters();
+export const NodesInputs = () => {
+	const { currentInput, setCurrentInput } = useParameters();
 
 	const onChange: (e: any) => void = (e) => {
 		const input = e.currentTarget.value
