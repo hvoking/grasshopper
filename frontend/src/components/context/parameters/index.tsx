@@ -16,7 +16,6 @@ export const useParameters = () => {
 }
 
 export const ParametersProvider = ({children}: any) => {
-	const [ geometry, setGeometry ] = useState<any>(null);
 	const [ position, setPosition ] = useState<positionType>({x: 0, y: 0});
 	const [ searchBox, setSearchBox ] = useState<boolean>(false);
 	const [ nodesAdded, setNodesAdded ] = useState<string[]>([]);

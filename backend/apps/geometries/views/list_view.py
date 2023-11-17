@@ -1,6 +1,6 @@
 # App imports
 from apps.geometries.services import list_service
-from apps.geometries.services.paths import threejsTypesPath
+from apps.utils.paths import threejsTypesPath
 
 # Third-party imports
 from rest_framework.decorators import api_view

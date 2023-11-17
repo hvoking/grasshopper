@@ -1,6 +1,5 @@
 # App imports
-from apps.geometries.services.utils import readFile
-from apps.geometries.services.paths import threejsTypesPath
+from apps.utils.paths import threejsTypesPath
 
 # Third-party imports
 from rest_framework.decorators import api_view
@@ -9,6 +8,11 @@ import re
 
 nodeInterfaceRegex = re.compile(r'(\w+)(\??:) (\w+)(?:[,\)])')
 
+def readFile(path):
+	with open(path, 'r', encoding = 'utf8') as f:
+		text = f.read()
+	return text
+
 # Opens geometry file and matching the regex
 @api_view(['GET'])
 def geometriesDetail(request, geometry):
@@ -16,4 +20,5 @@ def geometriesDetail(request, geometry):
 	interface = [i.groups() for i in re.finditer(nodeInterfaceRegex, geometriesTypes)]
 	geometries = [i[0] for i in interface]
 	# types = [i[2] for i in interface]
-	return Response({"inputs": geometries, "output": geometry})
+	resp = {"inputs": geometries, "output": geometry}
+	return Response(resp)

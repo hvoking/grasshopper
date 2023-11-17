@@ -1,11 +1,18 @@
-from apps.nodes.services.utils import readFile
+# App imports
 from apps.nodes.services.patterns import nodeDetailPattern, nodeInputPattern, nodeInputWordsPattern
-from apps.nodes.services.paths import threejsTypesPath, threeExportationFilePath
+
+# Utils imports
+from apps.utils.paths import threejsTypesPath, threeExportationFilePath
 
 # Third-party imports
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
+def readFile(path):
+	with open(path, 'r', encoding = 'utf8') as f:
+		text = f.read()
+	return text
+	
 # File that contains all nodes available for search
 text = readFile(threeExportationFilePath)
 

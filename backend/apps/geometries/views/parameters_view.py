@@ -1,6 +1,6 @@
 # App imports
 from apps.geometries.services import parameters_service
-from apps.geometries.services.paths import geometryPath
+from apps.utils.paths import geometryPath
 
 # Third-party imports
 from rest_framework.decorators import api_view
