@@ -1,21 +1,34 @@
 // App imports
-import { useSearch } from '../../../../context/search';
-import { useParameters } from '../../../../context/parameters';
 import './styles.scss';
 
+// Context imports
+import { useParameters } from '../../../../context/parameters';
+import { useGeometriesApi } from '../../../../context/api/geometries';
+
 export const SubToolsList = () => {
-	const { allItems } = useParameters();
-	const { searchGeometry } = useSearch();
+	const { allItems, setCurrentName, setCurrentNodeName } = useParameters();
+	const { geometriesData } = useGeometriesApi();
+
+	const onClick = (e: any) => {
+		e.preventDefault();
+		const nodeName = e.currentTarget.innerHTML
+		let name = 'nodes'
+		if (geometriesData.includes(nodeName)) {
+			name = 'geometries'
+		}
+		setCurrentNodeName(nodeName);
+		setCurrentName(name)
+	}
 
 	return (
  		<div className="subtools-list">
-			{allItems.map((item: any, index: number) => {
+			{allItems.length > 0 && allItems.map((item: any, index: number) => {
 				return (
 					<div
 						key={index} 
 						className="geometries" 
 						data-item={item} 
-						onClick={searchGeometry} 
+						onClick={onClick} 
 					>
 						<div className="hexagon"></div>
 						{item}

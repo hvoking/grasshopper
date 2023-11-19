@@ -17,13 +17,19 @@ export const SearchApiProvider = ({children}: any) => {
 	const [ searchData, setSearchData ] = useState<any>(null);
 
 	useEffect(() => {
+		const fetchData = async () => {
+			const tempUrl = `
+				${process.env.REACT_APP_API_URL}/
+				search_api
+				?node=${currentInput}
+			`
+			const url = tempUrl.replace(/\s/g, '');
+			const res = await fetch(url);
+			const receivedData = await res.json();
+			setSearchData(receivedData);
+		}
 		if (currentInput.length > 0) {
-			fetch(`http://localhost:8000/nodes-list/${currentInput}`)
-			.then(res => res.json())
-			.then(data => {
-				setSearchData(data);
-			})
-			.catch(error => console.log(error))
+			fetchData()
 		}
 		else {
 			setSearchData([]);

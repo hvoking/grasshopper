@@ -11,5 +11,7 @@ import re
 geometriesFoldersRegex = re.compile(r"(')(\w+)(')")
 
 def get_folders():
-	resp = [i.group(2) for i in re.finditer(geometriesFoldersRegex, str(listdir(threejsTypesPath)))]
+	current_directory = str(listdir(threejsTypesPath))
+	current_iterator = re.finditer(geometriesFoldersRegex, current_directory)
+	resp = [i.group(2) for i in current_iterator]
 	return resp

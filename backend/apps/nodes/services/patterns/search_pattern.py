@@ -6,7 +6,7 @@ def checkNull(regexItem):
 def nodeInputRegex(node):
 	return re.compile(rf"(')({node})(\w+)?(')", re.I)
 
-def nodesListPattern(node, nodes):
+def search_pattern(node, nodes):
 	nodesList = re.finditer(nodeInputRegex(node), str(nodes))
 	return set([i.group(2) + checkNull(i.group(3)) for i in nodesList])
 	

@@ -12,8 +12,10 @@ def readFile(path):
 	return text
 
 def get_details(geometry):
-	geometriesTypes = readFile(threejsTypesPath + "geometries/" + geometry + ".d.ts")
-	interface = [i.groups() for i in re.finditer(nodeInterfaceRegex, geometriesTypes)]
+	current_path = threejsTypesPath + "geometries/" + geometry + ".d.ts"
+	geometriesTypes = readFile(current_path)
+	current_iterator = re.finditer(nodeInterfaceRegex, geometriesTypes)
+	interface = [i.groups() for i in current_iterator]
 	geometries = [i[0] for i in interface]
 	# types = [i[2] for i in interface]
 	resp = {"inputs": geometries, "output": geometry}

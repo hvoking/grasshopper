@@ -2,7 +2,7 @@
 import './styles.scss';
 
 // Context imports
-import { useParameters } from '../../../context/parameters';
+import { useParameters } from '../../context/parameters';
 
 export const NodesInputs = () => {
 	const { currentInput, setCurrentInput } = useParameters();

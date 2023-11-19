@@ -14,17 +14,21 @@ export const useFilesApi = () => {
 
 export const FilesApiProvider = ({children}: any) => {
 	const { setAllItems, currentFile } = useParameters();
-	
+
 	useEffect(() => {
-		const fetchFolder = () => {
-			fetch(`http://localhost:8000/folders/${currentFile}`)
-			.then(res => res.json())
-			.then(data => {
-				setAllItems(data[currentFile]);
-			})
+		const fetchData = async () => {
+			const tempUrl = `
+				${process.env.REACT_APP_API_URL}/
+				files
+				?file=${currentFile}
+			`
+			const url = tempUrl.replace(/\s/g, '');
+			const res = await fetch(url);
+			const receivedData = await res.json();
+			setAllItems(receivedData);
 		}
-		currentFile && fetchFolder();
-	}, [currentFile])
+		currentFile && fetchData();
+	}, [ currentFile ])
 
 	return (
 		<FilesApiContext.Provider value={{ }}>

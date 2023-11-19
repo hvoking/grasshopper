@@ -3,14 +3,13 @@ import { useEffect, useState } from 'react';
 
 // Context imports
 import { useParameters } from '../../../context/parameters';
-import { useSearch } from '../../../context/search';
+import { useDetailApi } from '../../../context/api/detail';
 
 // Third-party imports
 import { Mesh, Object3D, MeshBasicMaterial, Points, PointsMaterial } from 'three';
 
 export const Geometry = () => {
-	const { scene } = useParameters();
-	const { currentGeometry } = useSearch();
+	const { currentGeometry, scene } = useParameters();
 
 	const [ listOfGeometries, setListOfGeometries ] = useState<any>([]);
 	

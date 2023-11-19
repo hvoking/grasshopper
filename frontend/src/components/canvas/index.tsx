@@ -1,14 +1,14 @@
 // App imports
 import { Nodes } from './nodes';
-import { Search } from './search';
 import { Graph } from './graph';
+import { Search } from '../search';
 import './styles.scss';
 
 // Context imports
 import { useParameters } from '../context/parameters';
 import { useSpline } from '../context/spline';
 
-export const Main = () => {
+export const ThreejsCanvas = () => {
 	const { deActivateSearchBox, activeSearchBox } = useParameters();
 	const { setSplineEndPosition } = useSpline();
 
@@ -32,4 +32,4 @@ export const Main = () => {
 	)
 }
 
-Main.displayName="Main";
+ThreejsCanvas.displayName="ThreejsCanvas";

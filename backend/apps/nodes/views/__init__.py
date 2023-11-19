@@ -1,2 +1,2 @@
-from .list_view import *
+from .search_view import *
 from .detail_view import *

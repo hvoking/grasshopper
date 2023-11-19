@@ -4,7 +4,7 @@ import { NodesInputs } from './inputs';
 import './styles.scss';
 
 // Context imports
-import { useParameters } from '../../context/parameters';
+import { useParameters } from '../context/parameters';
 
 export const Search = () => {
 	const { position, searchBox } = useParameters();

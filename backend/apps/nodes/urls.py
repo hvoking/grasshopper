@@ -1,10 +1,10 @@
 # Django imports
-from django.urls import path
+from django.urls import path, re_path
 
 # App imports
-from apps.nodes import views
+from apps.nodes.views import SearchView, DetailView
 
 urlpatterns = [
-	path('nodes-list/<str:node>/', views.nodesList),
-	path('nodes-detail/<str:node>/', views.nodesDetail)
+	re_path(r'^search_api', SearchView.as_view()),
+	re_path(r'^nodes-detail', DetailView.as_view())
 ]

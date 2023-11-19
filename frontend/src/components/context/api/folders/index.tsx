@@ -13,10 +13,15 @@ export const FoldersApiProvider = ({children}: any) => {
 	const [ listOfTools, setListOfTools ] = useState<string[]>([]);
 
 	useEffect(() => {
-		const fetchData = () => {
-			fetch('http://localhost:8000/folders/')
-			.then(res => res.json())
-			.then(data => {setListOfTools(data.folders)})
+		const fetchData = async () => {
+			const tempUrl = `
+				${process.env.REACT_APP_API_URL}/
+				folders/
+			`
+			const url = tempUrl.replace(/\s/g, '');
+			const res = await fetch(url);
+			const receivedData = await res.json();
+			setListOfTools(receivedData);
 		}
 		fetchData();
 	}, []);

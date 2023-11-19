@@ -7,5 +7,5 @@ from rest_framework.response import Response
 
 class ParametersView(APIView):
 	def get(self, request, **kwargs):
-		resp = parameters_service.get_parameters(geometryPath)
+		resp = parameters_service.get_parameters()
 		return Response(resp)

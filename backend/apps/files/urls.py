@@ -1,10 +1,10 @@
 # Django imports
-from django.urls import path
+from django.urls import re_path
 
 # App imports
-from apps.files import views
+from apps.files.views import FoldersView, FilesView
 
 urlpatterns = [
-	path('folders/', views.folders),
-	path('folders/<str:file>/', views.files),
+	re_path(r'^folders', FoldersView.as_view()),
+	re_path(r'^files', FilesView.as_view()),
 ]

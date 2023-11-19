@@ -9,11 +9,18 @@ import re
 
 nodePropertiesRegex = re.compile(r'(constructor)(.*)(\( )(.*)( \))')
 
-def get_parameters(geometryPath):
+def readFile(path):
+	with open(path, 'r', encoding = 'utf8') as f:
+		text = f.read()
+	return text
+
+def get_parameters():
 	geometries = {}
 	for geometry in os.listdir(geometryPath):
-		geoFile = readFile(geometryPath + geometry)
-		matches = [i.group(4) for i in re.finditer(nodePropertiesRegex, geoFile)]
+		current_path = geometryPath + geometry
+		geoFile = readFile(current_path)
+		current_iterator = re.finditer(nodePropertiesRegex, geoFile)
+		matches = [i.group(4) for i in current_iterator]
 		if len(matches):
 			geometries[geometry] = matches[0]
 	return geometries
