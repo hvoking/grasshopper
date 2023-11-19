@@ -23,7 +23,6 @@ export const ParametersProvider = ({children}: any) => {
 	const [ scene, setScene ] = useState<Scene>(new Scene());
 	const [ delay, setDelay ] = useState<any>(null);
 	const [ currentFile, setCurrentFile ] = useState<any>(null);
-	const [ allItems, setAllItems ] = useState<any>([]);
 	const [ currentNodeName, setCurrentNodeName ] = useState<any>(null);
 	const [ currentName, setCurrentName ] = useState<any>(null);
 	const [ currentGeometry, setCurrentGeometry  ] = useState<any>(null);
@@ -47,7 +46,6 @@ export const ParametersProvider = ({children}: any) => {
 			searchBox, position, scene,
 			delay, setDelay,
 			currentFile, setCurrentFile,
-			allItems, setAllItems,
 			currentName, setCurrentName,
 			currentNodeName, setCurrentNodeName,
 			currentGeometry, setCurrentGeometry

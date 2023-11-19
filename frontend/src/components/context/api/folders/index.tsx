@@ -10,24 +10,24 @@ export const useFoldersApi = () => {
 }
 
 export const FoldersApiProvider = ({children}: any) => {
-	const [ listOfTools, setListOfTools ] = useState<string[]>([]);
+	const [ foldersData, setFoldersData ] = useState<string[]>([]);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
-				folders/
+				folders_api/
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);
 			const receivedData = await res.json();
-			setListOfTools(receivedData);
+			setFoldersData(receivedData);
 		}
 		fetchData();
 	}, []);
 
 	return (
-		<FoldersApiContext.Provider value={{ listOfTools }}>
+		<FoldersApiContext.Provider value={{ foldersData }}>
 			{children}
 		</FoldersApiContext.Provider>
 	)

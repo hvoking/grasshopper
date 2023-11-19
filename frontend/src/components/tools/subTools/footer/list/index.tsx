@@ -4,10 +4,12 @@ import './styles.scss';
 // Context imports
 import { useParameters } from '../../../../context/parameters';
 import { useGeometriesApi } from '../../../../context/api/geometries';
+import { useFilesApi } from '../../../../context/api/files';
 
 export const SubToolsList = () => {
-	const { allItems, setCurrentName, setCurrentNodeName } = useParameters();
+	const { setCurrentName, setCurrentNodeName } = useParameters();
 	const { geometriesData } = useGeometriesApi();
+	const { filesData } = useFilesApi();
 
 	const onClick = (e: any) => {
 		e.preventDefault();
@@ -22,7 +24,7 @@ export const SubToolsList = () => {
 
 	return (
  		<div className="subtools-list">
-			{allItems.map((item: any, index: number) => {
+			{filesData && filesData.map((item: any, index: number) => {
 				return (
 					<div
 						key={index} 

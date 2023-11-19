@@ -13,25 +13,26 @@ export const useFilesApi = () => {
 }
 
 export const FilesApiProvider = ({children}: any) => {
-	const { setAllItems, currentFile } = useParameters();
+	const { currentFile } = useParameters();
+	const [ filesData, setFilesData ] = useState<any>(null);
 
 	useEffect(() => {
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
-				files
+				files_api
 				?file=${currentFile}
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);
 			const receivedData = await res.json();
-			setAllItems(receivedData);
+			setFilesData(receivedData);
 		}
 		currentFile && fetchData();
 	}, [ currentFile ])
 
 	return (
-		<FilesApiContext.Provider value={{ }}>
+		<FilesApiContext.Provider value={{ filesData }}>
 			{children}
 		</FilesApiContext.Provider>
 	)
