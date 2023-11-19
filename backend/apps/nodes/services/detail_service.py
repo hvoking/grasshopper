@@ -12,7 +12,7 @@ def readFile(path):
 # File that contains all nodes available for search
 text = readFile(threeExportationFilePath)
 
-def get_detail(node):
+def get_details(node):
 	nodePath = nodeDetailPattern(node, text)
 	nodePath = threejsTypesPath + nodePath[0].replace("'", "").replace('.', '') + ".d.ts"
 	nodeInfo = readFile(nodePath)

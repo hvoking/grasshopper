@@ -1,11 +1,11 @@
 # Django imports
-from django.urls import path
+from django.urls import path, re_path
 
 # App imports
-from apps.geometries import views
+from apps.geometries.views import ListView, geometriesDetail, ParametersView
 
 urlpatterns = [
-	path('geometries/', views.geometries),
-	path('geometries-detail/<str:geometry>/', views.geometriesDetail),
-	path('geometries-parameters/', views.geometriesWithParameters)
+	re_path(r'geometries/', ListView.as_view()),
+	path('geometries-detail/<str:geometry>/', geometriesDetail),
+	re_path('geometries-parameters/', ParametersView.as_view())
 ]

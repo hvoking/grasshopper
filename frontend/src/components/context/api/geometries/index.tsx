@@ -13,15 +13,17 @@ export const GeometriesApiProvider = ({children}: any) => {
 	const [ geometriesData, setGeometriesData ] = useState<any>(null);
 
 	useEffect(() => {
-		const fetchData = () => {
-			fetch('http://localhost:8000/geometries/')
-			.then(res => res.json())
-			.then(data => {
-				setGeometriesData(data.geometries)
-			})
-			.catch(error => console.log(error))
+		const fetchData = async () => {
+			const tempUrl = `
+				${process.env.REACT_APP_API_URL}/
+				geometries/
+			`
+			const url = tempUrl.replace(/\s/g, '');
+			const res = await fetch(url);
+			const receivedData = await res.json();
+			setGeometriesData(receivedData);
 		}
-		fetchData()
+		fetchData();
 	}, []);
 
 	return (
