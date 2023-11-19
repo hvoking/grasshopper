@@ -11,18 +11,18 @@ export const SubToolsList = () => {
 
 	const onClick = (e: any) => {
 		e.preventDefault();
-		const nodeName = e.currentTarget.innerHTML
-		let name = 'nodes'
+		const nodeName = e.target.dataset.item;
+		let name = 'nodes';
 		if (geometriesData.includes(nodeName)) {
-			name = 'geometries'
+			name = 'geometries';
 		}
 		setCurrentNodeName(nodeName);
-		setCurrentName(name)
+		setCurrentName(name);
 	}
 
 	return (
  		<div className="subtools-list">
-			{allItems.length > 0 && allItems.map((item: any, index: number) => {
+			{allItems.map((item: any, index: number) => {
 				return (
 					<div
 						key={index} 

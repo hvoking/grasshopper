@@ -21,24 +21,25 @@ export const DetailApiProvider = ({children}: any) => {
 
 	const createNode = () => {
 		const threeDefinition = THREE
-		const geo = eval(`new threeDefinition.${currentName}()`)
+		const geo = eval(`new threeDefinition.${currentNodeName}()`)
 		setCurrentGeometry(geo)
 	}
 
 	useEffect(() => {
-		const fetchData = async (name: any, nodeName: any) => {
-		const tempUrl = `
-			${process.env.REACT_APP_API_URL}/
-			${name}-detail
-			?node=${nodeName}
-		`
-		const url = tempUrl.replace(/\s/g, '');
-		const res = await fetch(url);
-		const receivedData = await res.json();
-		setDetailData(receivedData)
-		setNodesAdded([...nodesAdded, receivedData]);
-		currentName && createNode()
-	}
+		const fetchData = async () => {
+			const tempUrl = `
+				${process.env.REACT_APP_API_URL}/
+				${currentName}-detail
+				?node=${currentNodeName}
+			`
+			const url = tempUrl.replace(/\s/g, '');
+			const res = await fetch(url);
+			const receivedData = await res.json();
+			setDetailData(receivedData)
+			setNodesAdded([...nodesAdded, receivedData]);
+			createNode()
+		}
+		fetchData()
 	}, [ currentNodeName, currentName ])
 
 	return (
