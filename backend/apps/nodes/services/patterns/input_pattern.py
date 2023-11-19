@@ -1,7 +1,7 @@
 import re
 
-nodesListRegex = re.compile(r'(constructor\()(.*)(\))')
-
-def nodeInputPattern(nodeInfo):
-	nodeConstructor = re.finditer(nodesListRegex, nodeInfo)
-	return [i.group(2) for i in nodeConstructor]
+def input_pattern(nodeInfo):
+	current_pattern = re.compile(r'(constructor\()(.*)(\))')
+	current_iterator = re.finditer(current_pattern, nodeInfo)
+	resp = [i.group(2) for i in current_iterator]
+	return resp

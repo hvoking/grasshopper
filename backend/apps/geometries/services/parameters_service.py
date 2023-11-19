@@ -2,7 +2,7 @@
 import os
 
 # App imports
-from apps.utils.paths import geometryPath
+from apps.utils.paths import geometry_path
 
 # Third-party imports
 import re
@@ -16,8 +16,8 @@ def readFile(path):
 
 def get_parameters():
 	geometries = {}
-	for geometry in os.listdir(geometryPath):
-		current_path = geometryPath + geometry
+	for geometry in os.listdir(geometry_path):
+		current_path = geometry_path + geometry
 		geoFile = readFile(current_path)
 		current_iterator = re.finditer(nodePropertiesRegex, geoFile)
 		matches = [i.group(4) for i in current_iterator]

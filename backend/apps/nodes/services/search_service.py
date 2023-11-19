@@ -5,7 +5,7 @@ import os
 import re
 
 # Utils imports
-from apps.utils.paths import threejsGeometriesPath, threeExportationFilePath
+from apps.utils.paths import geometries_path, exportation_path
 
 def readFile(path):
 	with open(path, 'r', encoding = 'utf8') as f:
@@ -25,7 +25,7 @@ def get_geometries_names(path):
 
 # List of nodes and geometries available for search
 def get_nodes():
-	nodes_names = get_nodes_names(threeExportationFilePath)
-	geometries_names = get_geometries_names(threejsGeometriesPath)
+	nodes_names = get_nodes_names(exportation_path)
+	geometries_names = get_geometries_names(geometries_path)
 	resp = nodes_names + geometries_names
 	return resp
