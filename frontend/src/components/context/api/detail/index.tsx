@@ -39,7 +39,7 @@ export const DetailApiProvider = ({children}: any) => {
 			setNodesAdded([...nodesAdded, receivedData]);
 			createNode()
 		}
-		fetchData()
+		currentNodeName && fetchData()
 	}, [ currentNodeName, currentName ])
 
 	return (
