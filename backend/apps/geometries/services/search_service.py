@@ -1,14 +1,22 @@
 # System imports
 import os
 
-# App imports
-from apps.nodes.services.patterns import search_pattern
-
 # Utils imports
 from apps.utils.paths import geometries_path, exportation_path
 
 # Third-party imports
 import re
+
+def checkNull(regexItem):
+	return '' if regexItem == None else regexItem
+
+def nodeInputRegex(node):
+	return re.compile(rf"(')({node})(\w+)?(')", re.I)
+
+def search_pattern(node, nodes):
+	nodesList = re.finditer(nodeInputRegex(node), str(nodes))
+	return set([i.group(2) + checkNull(i.group(3)) for i in nodesList])
+	
 
 def readFile(path):
 	with open(path, 'r', encoding = 'utf8') as f:

@@ -1,5 +1,5 @@
 # App imports
-from apps.nodes.services import search_service
+from apps.geometries.services import search_service
 
 # Third-party imports
 from rest_framework.views import APIView
