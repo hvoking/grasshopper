@@ -1,5 +1,5 @@
 # App imports
-from apps.geometries.services import parameters_service
+from apps.nodes.services import parameters_service
 
 # Third-party imports
 from rest_framework.views import APIView

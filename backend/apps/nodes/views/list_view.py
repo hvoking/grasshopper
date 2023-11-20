@@ -1,5 +1,5 @@
 # App imports
-from apps.geometries.services import list_service
+from apps.nodes.services import list_service
 from apps.utils.paths import geometries_path
 
 # Third-party imports

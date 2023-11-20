@@ -1,5 +1,5 @@
 # App imports
-from apps.geometries.services.nodes.patterns import detail_pattern, input_pattern, words_pattern
+from apps.nodes.services.nodes.patterns import detail_pattern, input_pattern, words_pattern
 
 # Utils imports
 from apps.utils.paths import types_path, exportation_path
