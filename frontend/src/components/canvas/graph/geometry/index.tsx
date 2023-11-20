@@ -8,11 +8,11 @@ import { useParameters } from '../../../context/parameters';
 import { Mesh, Object3D, MeshBasicMaterial, Points, PointsMaterial } from 'three';
 
 export const Geometry = () => {
-	const { currentGeometry, scene } = useParameters();
+	const { currentGeometry, typeName, scene } = useParameters();
 	const [ listOfGeometries, setListOfGeometries ] = useState<any>([]);
 	
 	useEffect(() => {
-		currentGeometry && createMesh();
+		currentGeometry && typeName === "geometries" && createMesh();
 	}, [currentGeometry])
 
 	const clearScene = (scene: any) => {
