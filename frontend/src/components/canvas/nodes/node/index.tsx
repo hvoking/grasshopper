@@ -16,9 +16,9 @@ export const Node = ({nodeItem}: {nodeItem: any}) => {
 	return (
 		<Draggable nodeRef={nodeRef}>
 			<div ref={nodeRef} className="node">
-				<Inputs nodeItem={nodeItem} />
-				<Name nodeItem={nodeItem} />
-				<Outputs nodeItem={nodeItem} />
+				<Inputs nodeItem={nodeItem}/>
+				<Name nodeItem={nodeItem}/>
+				<Outputs nodeItem={nodeItem}/>
 			</div>
 		</Draggable>
 	)

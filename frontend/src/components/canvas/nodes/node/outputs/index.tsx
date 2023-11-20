@@ -10,7 +10,7 @@ import { useSpline } from '../../../../context/spline';
 export const Outputs = ({nodeItem}: any) => {
 	const { startTransmitting, setSplineStartPosition, setActiveSpline } = useSpline();
 
-	const outputKnob = useRef<any>(null);
+	const outputKnobRef = useRef<any>(null);
 
 	const activateSpline = (e: any) => {
 		setSplineStartPosition({x: e.clientX, y: e.clientY - 179});
@@ -24,7 +24,7 @@ export const Outputs = ({nodeItem}: any) => {
 					{nodeItem.output && nodeItem.output[0]}
 				</div>
 				<span 
-					ref={outputKnob} 
+					ref={outputKnobRef} 
 					className="after" 
 					onClick={activateSpline}
 					onMouseOut={startTransmitting}

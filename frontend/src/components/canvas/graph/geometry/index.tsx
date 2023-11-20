@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useParameters } from '../../../context/parameters';
 
 // Third-party imports
-import { Mesh, Object3D, MeshBasicMaterial, Points, PointsMaterial } from 'three';
+import { Mesh, Object3D, MeshBasicMaterial, Points, PointsMaterial, DoubleSide } from 'three';
 
 export const Geometry = () => {
 	const { currentGeometry, typeName, scene } = useParameters();
@@ -23,7 +23,7 @@ export const Geometry = () => {
 	}
 
 	const createMesh = () => {
-		const material = new MeshBasicMaterial( { color: 0xBBCC00 } );
+		const material = new MeshBasicMaterial( { color: 0xBBCC00, side: DoubleSide } );
 		const pointMaterial = new PointsMaterial( { size: 3, sizeAttenuation: false, color: 'aqua' } );
 		const group = new Object3D();
 		clearScene(scene);

@@ -23,7 +23,7 @@ export const Name = ({nodeItem}: any) => {
 			</div>
 			{information && 
 				<div className="node-information" style={{}}>
-					<div className="title">
+					<div className="node-title">
 						<div className="hexagon"></div>
 						<div>{nodeItem.output && nodeItem.output}</div>
 					</div>

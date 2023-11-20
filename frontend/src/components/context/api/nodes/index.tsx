@@ -20,9 +20,9 @@ export const NodesApiProvider = ({children}: any) => {
 	const [ nodesData, setNodesData ] = useState<any>(null);
 
 	const createNode = () => {
-		const threeDefinition = THREE
-		const geo = eval(`new threeDefinition.${nodeName}()`)
-		typeName === "geometries" && setCurrentGeometry(geo)
+		const threeDefinition = THREE;
+		const geo = eval(`new threeDefinition.${nodeName}()`);
+		typeName === "geometries" && setCurrentGeometry(geo);
 	}
 
 	useEffect(() => {

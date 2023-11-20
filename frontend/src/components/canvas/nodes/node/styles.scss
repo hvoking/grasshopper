@@ -8,5 +8,8 @@
   border: 1px solid gray;
   border-radius: 4px;
   background-color: #dfdfdf;
-  cursor: default;
+  cursor: grab;
+}
+.node:active {
+  cursor: grabbing;
 }
