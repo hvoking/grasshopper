@@ -1,6 +1,5 @@
 # App imports
 from apps.nodes.services import search_service
-from apps.nodes.services.patterns import search_pattern
 
 # Third-party imports
 from rest_framework.views import APIView
@@ -9,6 +8,5 @@ from rest_framework.response import Response
 class SearchView(APIView):
 	def get(self, request, **kwargs):
 		node = self.request.GET.get('node')
-		nodes = search_service.get_nodes()
-		resp = search_pattern(node, nodes)
+		resp = search_service.get_nodes(node)
 		return Response(resp)

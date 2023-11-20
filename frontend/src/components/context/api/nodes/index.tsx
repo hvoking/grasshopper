@@ -7,17 +7,17 @@ import { useParameters } from '../../parameters';
 // Third-party imports
 import * as THREE from 'three';
 
-const DetailApiContext: React.Context<any> = createContext(null)
+const NodesApiContext: React.Context<any> = createContext(null)
 
-export const useDetailApi = () => {
+export const useNodesApi = () => {
 	return (
-		useContext(DetailApiContext)
+		useContext(NodesApiContext)
 	)
 }
 
-export const DetailApiProvider = ({children}: any) => {
+export const NodesApiProvider = ({children}: any) => {
 	const { nodesAdded, setNodesAdded, currentNodeName, currentName, setCurrentGeometry  } = useParameters();
-	const [ detailData, setDetailData ] = useState<any>(null);
+	const [ nodesData, setNodesData ] = useState<any>(null);
 
 	const createNode = () => {
 		const threeDefinition = THREE
@@ -29,13 +29,14 @@ export const DetailApiProvider = ({children}: any) => {
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
-				${currentName}-detail
-				?node=${currentNodeName}
+				nodes_api
+				?node_name=${currentNodeName}
+				&type_name=${currentName}				
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);
 			const receivedData = await res.json();
-			setDetailData(receivedData)
+			setNodesData(receivedData)
 			setNodesAdded([...nodesAdded, receivedData]);
 			createNode()
 		}
@@ -43,10 +44,10 @@ export const DetailApiProvider = ({children}: any) => {
 	}, [ currentNodeName, currentName ])
 
 	return (
-		<DetailApiContext.Provider value={{ detailData }}>
+		<NodesApiContext.Provider value={{ nodesData }}>
 			{children}
-		</DetailApiContext.Provider>
+		</NodesApiContext.Provider>
 	)
 }
 
-DetailApiContext.displayName = "DetailApiContext";
+NodesApiContext.displayName = "NodesApiContext";

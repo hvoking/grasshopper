@@ -3,7 +3,7 @@ import { FoldersApiProvider } from './folders';
 import { FilesApiProvider } from './files';
 import { GeometriesApiProvider } from './geometries';
 import { SearchApiProvider } from './search';
-import { DetailApiProvider } from './detail';
+import { NodesApiProvider } from './nodes';
 
 export const ApiProvider = ({ children }: any) => {
 
@@ -12,9 +12,9 @@ export const ApiProvider = ({ children }: any) => {
 		<FilesApiProvider>
 		<GeometriesApiProvider>
 		<SearchApiProvider>
-		<DetailApiProvider>
+		<NodesApiProvider>
 			{ children }
-		</DetailApiProvider>
+		</NodesApiProvider>
 		</SearchApiProvider>
 		</GeometriesApiProvider>
 		</FilesApiProvider>

@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'apps.geometries',
     'apps.nodes',
-    'apps.files',
 ]
 
 MIDDLEWARE = [

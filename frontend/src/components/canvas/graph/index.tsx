@@ -34,9 +34,8 @@ const createNewRenderer = (): WebGLRenderer => {
 }
 
 export const Graph = () => {
-	const { scene } = useParameters();
-
 	const canvasRef = useRef<null | HTMLDivElement>(null);
+	const { scene } = useParameters();
 	
 	useEffect(() => {
 		const camera = createNewCamera();
