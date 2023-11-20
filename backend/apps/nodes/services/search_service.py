@@ -2,7 +2,7 @@
 import os
 
 # Utils imports
-from apps.utils.paths import geometries_path, exportation_path
+from apps.nodes.utils import paths
 
 # Third-party imports
 import re
@@ -38,8 +38,8 @@ def get_geometries_names(path):
 
 # List of nodes and geometries available for search
 def get_nodes(node):
-	nodes_names = get_nodes_names(exportation_path)
-	geometries_names = get_geometries_names(geometries_path)
+	nodes_names = get_nodes_names(paths.exportation_path)
+	geometries_names = get_geometries_names(paths.geometries_path)
 	nodes = nodes_names + geometries_names
 	resp = search_pattern(node, nodes)
 	return resp

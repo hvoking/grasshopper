@@ -1,6 +1,6 @@
 # App imports
 from apps.nodes.services import list_service
-from apps.utils.paths import geometries_path
+from apps.nodes.utils import paths
 
 # Third-party imports
 from rest_framework.views import APIView
@@ -9,5 +9,5 @@ from rest_framework.response import Response
 # List all geometries in threejs folder
 class ListView(APIView):
 	def get(self, request, **kwargs):
-		resp = list_service.get_geometries(geometries_path)
+		resp = list_service.get_geometries(paths.geometries_path)
 		return Response(resp)
