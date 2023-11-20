@@ -12,7 +12,7 @@ export const Geometry = () => {
 	const [ listOfGeometries, setListOfGeometries ] = useState<any>([]);
 	
 	useEffect(() => {
-		currentGeometry && typeName === "geometries" && createMesh();
+		currentGeometry && createMesh();
 	}, [currentGeometry])
 
 	const clearScene = (scene: any) => {

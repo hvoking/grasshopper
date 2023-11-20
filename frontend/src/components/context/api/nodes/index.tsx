@@ -22,7 +22,7 @@ export const NodesApiProvider = ({children}: any) => {
 	const createNode = () => {
 		const threeDefinition = THREE
 		const geo = eval(`new threeDefinition.${nodeName}()`)
-		setCurrentGeometry(geo)
+		typeName === "geometries" && setCurrentGeometry(geo)
 	}
 
 	useEffect(() => {
