@@ -7,19 +7,19 @@ import { useGeometriesApi } from '../../../../context/api/geometries';
 import { useFilesApi } from '../../../../context/api/files';
 
 export const SubToolsList = () => {
-	const { setCurrentName, setCurrentNodeName } = useParameters();
+	const { setTypeName, setNodeName } = useParameters();
 	const { geometriesData } = useGeometriesApi();
 	const { filesData } = useFilesApi();
 
 	const onClick = (e: any) => {
 		e.preventDefault();
 		const nodeName = e.target.dataset.item;
-		let name = 'nodes';
+		let typeName = 'nodes';
 		if (geometriesData.includes(nodeName)) {
-			name = 'geometries';
+			typeName = 'geometries';
 		}
-		setCurrentNodeName(nodeName);
-		setCurrentName(name);
+		setNodeName(nodeName);
+		setTypeName(typeName);
 	}
 
 	return (

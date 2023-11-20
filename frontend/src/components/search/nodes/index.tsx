@@ -6,18 +6,18 @@ import './styles.scss';
 
 export const NodesList = () => {
 	const { searchData } = useSearchApi();
-	const { setCurrentName, setCurrentNodeName } = useParameters();
+	const { setTypeName, setNodeName } = useParameters();
 	const { geometriesData } = useGeometriesApi();
 
 	const onClick = (e: any) => {
 		e.preventDefault();
 		const nodeName = e.currentTarget.innerHTML
-		let name = 'nodes'
+		let typeName = 'nodes'
 		if (geometriesData.includes(nodeName)) {
-			name = 'geometries'
+			typeName = 'geometries'
 		}
-		setCurrentNodeName(nodeName);
-		setCurrentName(name)
+		setNodeName(nodeName);
+		setTypeName(typeName)
 	}
 
 	if (!searchData) return <></>

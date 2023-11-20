@@ -1,5 +1,5 @@
 # App imports
-from apps.grass_nodes.services.nodes.patterns import detail_pattern, input_pattern, words_pattern
+from apps.grass_nodes.services.nodes.patterns import nodes_pattern, input_pattern, words_pattern
 
 # Utils imports
 from apps.grass_nodes.utils import paths
@@ -16,8 +16,8 @@ def readFile(path):
 text = readFile(paths.exportation_path)
 
 def get_nodes(node_name):
-	node_path = detail_pattern(node_name, text)
-	node_path = paths.types_path + node_path[0].replace("'", "").replace('.', '') + ".d.ts"
+	node_path = nodes_pattern(node_name, text)
+	node_path = paths.nodes_types_path + node_path[0].replace("'", "").replace('.', '') + ".d.ts"
 	nodeInfo = readFile(node_path)
 	nodeInput = input_pattern(nodeInfo)
 	nodeInputWords = words_pattern(nodeInput)
