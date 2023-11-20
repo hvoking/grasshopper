@@ -16,12 +16,12 @@ export const useNodesApi = () => {
 }
 
 export const NodesApiProvider = ({children}: any) => {
-	const { nodesAdded, setNodesAdded, currentNodeName, currentName, setCurrentGeometry  } = useParameters();
+	const { nodesAdded, setNodesAdded, nodeName, typeName, setCurrentGeometry  } = useParameters();
 	const [ nodesData, setNodesData ] = useState<any>(null);
 
 	const createNode = () => {
 		const threeDefinition = THREE
-		const geo = eval(`new threeDefinition.${currentNodeName}()`)
+		const geo = eval(`new threeDefinition.${nodeName}()`)
 		setCurrentGeometry(geo)
 	}
 
@@ -30,8 +30,8 @@ export const NodesApiProvider = ({children}: any) => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
 				nodes_api
-				?node_name=${currentNodeName}
-				&type_name=${currentName}				
+				?node_name=${nodeName}
+				&type_name=${typeName}				
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);
@@ -40,8 +40,8 @@ export const NodesApiProvider = ({children}: any) => {
 			setNodesAdded([...nodesAdded, receivedData]);
 			createNode()
 		}
-		currentNodeName && fetchData()
-	}, [ currentNodeName, currentName ])
+		nodeName && fetchData()
+	}, [ nodeName, typeName ])
 
 	return (
 		<NodesApiContext.Provider value={{ nodesData }}>
