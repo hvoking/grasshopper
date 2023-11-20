@@ -24,7 +24,6 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'apps.geometries',
-    'apps.nodes',
 ]
 
 MIDDLEWARE = [
