@@ -2,7 +2,7 @@
 from os import listdir
 
 # App imports
-from apps.nodes.utils import paths
+from apps.grass_nodes.utils import paths
 
 # Third-party imports
 import re

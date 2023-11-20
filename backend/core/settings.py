@@ -23,7 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'rest_framework',
     'corsheaders',
-    'apps.nodes',
+    'apps.grass_nodes',
 ]
 
 MIDDLEWARE = [

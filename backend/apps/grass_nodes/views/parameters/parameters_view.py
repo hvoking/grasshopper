@@ -1,12 +1,11 @@
 # App imports
-from apps.nodes.services import search_service
+from apps.grass_nodes.services.parameters import parameters_service
 
 # Third-party imports
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-class SearchView(APIView):
+class ParametersView(APIView):
 	def get(self, request, **kwargs):
-		node = self.request.GET.get('node')
-		resp = search_service.get_nodes(node)
+		resp = parameters_service.get_parameters()
 		return Response(resp)

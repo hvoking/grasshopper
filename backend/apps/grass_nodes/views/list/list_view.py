@@ -1,6 +1,6 @@
 # App imports
-from apps.nodes.services import list_service
-from apps.nodes.utils import paths
+from apps.grass_nodes.services.list import list_service
+from apps.grass_nodes.utils import paths
 
 # Third-party imports
 from rest_framework.views import APIView

@@ -1,5 +1,5 @@
 # App imports
-from apps.nodes.services import folders_service
+from apps.grass_nodes.services.folders import folders_service
 
 # Third-party imports
 from rest_framework.views import APIView

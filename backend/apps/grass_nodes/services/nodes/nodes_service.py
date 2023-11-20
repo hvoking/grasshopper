@@ -1,8 +1,8 @@
 # App imports
-from apps.nodes.services.nodes.patterns import detail_pattern, input_pattern, words_pattern
+from apps.grass_nodes.services.nodes.patterns import detail_pattern, input_pattern, words_pattern
 
 # Utils imports
-from apps.nodes.utils import paths
+from apps.grass_nodes.utils import paths
 
 # Third-party imports
 import re

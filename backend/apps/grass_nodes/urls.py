@@ -2,7 +2,12 @@
 from django.urls import re_path
 
 # App imports
-from apps.nodes.views import ListView, ParametersView, FoldersView, FilesView, SearchView, NodesView
+from apps.grass_nodes.views.list import ListView
+from apps.grass_nodes.views.parameters import ParametersView
+from apps.grass_nodes.views.folders import FoldersView
+from apps.grass_nodes.views.files import FilesView
+from apps.grass_nodes.views.search import SearchView
+from apps.grass_nodes.views.nodes import NodesView
 
 urlpatterns = [
 	re_path(r'^geometries/', ListView.as_view()),
