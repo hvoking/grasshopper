@@ -12,10 +12,15 @@ export const Search = () => {
 	const x = position.x - 100;
 	const y = position.y - 40;
 
+	const boxPosition = {left: x, top: y}
+
 	if (!searchBox) return <></>
 
 	return (
-		<div className="search-box" style={{left: x, top: y}}>
+		<div 
+			className="search-box" 
+			style={boxPosition}
+		>
 			<NodesInputs/>
 			<NodesList/>
 		</div>

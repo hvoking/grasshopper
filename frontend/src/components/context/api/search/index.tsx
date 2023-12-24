@@ -21,7 +21,7 @@ export const SearchApiProvider = ({children}: any) => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
 				search_api
-				?node=${currentInput}
+				?currentNode=${currentInput}
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);

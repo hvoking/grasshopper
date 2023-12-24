@@ -18,7 +18,7 @@ export const Tools = () => {
 
 	return (
 		<div ref={toolsRef} className="tools" onWheel={onwheel}>
-			{foldersData.map((currentTool: any, index: number) => { 
+			{foldersData.length > 0 && foldersData.map((currentTool: any, index: number) => { 
 				return <Subtools key={index} currentTool={currentTool}/>
 			})}
 		</div>

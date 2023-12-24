@@ -27,7 +27,6 @@ export const ParametersProvider = ({children}: any) => {
 	const [ typeName, setTypeName ] = useState<any>(null);
 	const [ currentGeometry, setCurrentGeometry  ] = useState<any>(null);
 
-
 	const activeSearchBox: searchBoxType = (e) => {
 		setSearchBox(true);
 		setPosition({x: e.clientX, y: e.clientY})
