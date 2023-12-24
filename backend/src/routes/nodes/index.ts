@@ -1,5 +1,6 @@
 // App imports
-import { getNodes, getGeometryNode } from '../../services/nodes';
+import { getNodes } from '../../services/nodes/info';
+import { getGeometryNode } from '../../services/nodes/geometry';
 
 // Third-party imports
 import express from 'express';
