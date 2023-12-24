@@ -32,7 +32,7 @@ export const searchNode = (node: any) => {
   const nodesNames = getNodesNames(exportationPath);
   const geometriesNames = getGeometriesNames(geometriesPath);
   const nodes = nodesNames.concat(geometriesNames);
-  const filterNodes = geometriesNames.filter((currentNode: any) => {
+  const filterNodes = nodes.filter((currentNode: any) => {
     if (currentNode.toLowerCase().includes(node.toLowerCase())) {
       return currentNode
     }

@@ -1,26 +1,12 @@
+// App imports
+import { nodesPattern, inputPattern, wordsPattern } from './patterns';
+
+// Third-party imports
 import { readFileSync } from 'fs';
 import path from 'path';
 
 const nodesTypesPath = path.resolve(__dirname, '../../../../frontend/node_modules/@types/three/src');
 const exportationPath = path.resolve(__dirname, '../../../../frontend/node_modules/@types/three/src/Three.d.ts');
-
-const inputPattern = (nodeInfo: any) => {
-  const currentPattern = /constructor\((.*)\)/g;
-  const currentIterator = [...nodeInfo.matchAll(currentPattern)];
-  return currentIterator.map(i => i[1]);
-};
-
-const nodesPattern = (node: any, text: any) => {
-  const currentPattern = new RegExp(`(\\.\/)(.+)\/(${node})`, 'g');
-  const currentIterator = [...text.matchAll(currentPattern)];
-  return currentIterator.map(i => i[0]);
-};
-
-const wordsPattern = (nodeInput: any) => {
-  const currentPattern = /(\w+)(\??:)/g;
-  const currentIterator = [...nodeInput[0].matchAll(currentPattern)];
-  return currentIterator.map(i => i[1]);
-};
 
 const text = readFileSync(exportationPath);
 
