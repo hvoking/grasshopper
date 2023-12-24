@@ -17,4 +17,4 @@ router.get('/folders_api/', (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

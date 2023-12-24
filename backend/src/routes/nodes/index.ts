@@ -26,4 +26,4 @@ router.get('/nodes_api', (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

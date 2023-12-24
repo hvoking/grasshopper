@@ -3,12 +3,12 @@ import express, { Express, Request } from 'express';
 import cors from "cors";
 
 // Routes imports
-const geometriesRouter = require('./routes/geometries')
-const parametersRouter = require('./routes/parameters')
-const foldersRouter = require('./routes/folders')
-const filesRouter = require('./routes/files')
-const searchRouter = require('./routes/search')
-const nodesRouter = require('./routes/nodes')
+import geometriesRouter from './routes/geometries';
+import parametersRouter from './routes/parameters';
+import foldersRouter from './routes/folders';
+import filesRouter from './routes/files';
+import searchRouter from './routes/search';
+import nodesRouter from './routes/nodes';
 
 const app: Express = express();
 const port: number = 8000;
