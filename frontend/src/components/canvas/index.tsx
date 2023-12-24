@@ -20,7 +20,7 @@ export const ThreejsCanvas = () => {
 
 	return (
 		<div
-			className="main-wrapper" 
+			className="canvas-wrapper" 
 			onClick={deActivateSearchBox} 
 			onDoubleClick={activeSearchBox}
 			onMouseMove={onMouseMove}

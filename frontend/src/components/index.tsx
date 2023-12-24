@@ -2,10 +2,11 @@
 import { Wrapper } from './wrapper';
 import { Tools } from './tools';
 import { ThreejsCanvas } from './canvas';
+import './styles.scss';
 
 export const Main = () => {
 	return (
-		<div className="wrapper">
+		<div className="main-wrapper">
 		    <Wrapper>
 		    	<Tools/>
 		    </Wrapper>
