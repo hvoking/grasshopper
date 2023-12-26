@@ -20,11 +20,8 @@ router.get('/', (req, res) => {
 });
 
 router.get('/geometries', (req, res) => {
-  const currentPath = '../../../../frontend/node_modules/@types/three/src/geometries/';
-  const geometriesPath = path.resolve(__dirname, currentPath);
-  
   try {
-    const resp = getGeometries(geometriesPath);
+    const resp = getGeometries();
     res.json(resp);
   }
   catch (error) {
