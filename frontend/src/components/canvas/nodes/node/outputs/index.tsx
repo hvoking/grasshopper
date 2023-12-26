@@ -19,8 +19,7 @@ export const Outputs = ({nodeItem}: any) => {
 
 	return (
 		<div className="node-outputs">
-			<div className="output-item">
-				<div>
+				<div style={{height: "2px"}}>
 					{nodeItem.output && nodeItem.output[0]}
 				</div>
 				<span 
@@ -30,7 +29,6 @@ export const Outputs = ({nodeItem}: any) => {
 					onMouseOut={startTransmitting}
 				>
 				</span>
-			</div>
 		</div>
 	)
 }

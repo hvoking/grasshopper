@@ -3,23 +3,19 @@ import express, { Express, Request } from 'express';
 import cors from "cors";
 
 // Routes imports
-import geometriesRouter from './routes/geometries';
-import parametersRouter from './routes/parameters';
-import foldersRouter from './routes/folders';
 import filesRouter from './routes/files';
-import searchRouter from './routes/search';
+import foldersRouter from './routes/folders';
 import nodesRouter from './routes/nodes';
+import searchRouter from './routes/search';
 
 const app: Express = express();
 const port: number = 8000;
 
 app.use(cors<Request>());
-app.use('/', geometriesRouter);
-app.use('/', parametersRouter);
-app.use('/', foldersRouter);
-app.use('/', filesRouter);
-app.use('/', searchRouter);
-app.use('/', nodesRouter);
+app.use('/files', filesRouter);
+app.use('/folders', foldersRouter);
+app.use('/nodes', nodesRouter);
+app.use('/search', searchRouter);
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)

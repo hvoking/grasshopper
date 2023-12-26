@@ -6,7 +6,7 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/search_api', (req, res) => {
+router.get('/', (req, res) => {
   try {
     const { currentNode } = req.query;
     const resp = searchNode(currentNode);

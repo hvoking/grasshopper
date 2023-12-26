@@ -1,22 +1,26 @@
 // App imports
-import { getNodes } from '../../services/nodes/info';
+import { getMaterialNode } from '../../services/nodes/material';
 import { getGeometryNode } from '../../services/nodes/geometry';
+import { getNodes } from '../../services/nodes/info';
 
 // Third-party imports
 import express from 'express';
 
 const router = express.Router();
 
-router.get('/nodes', (req, res) => {
-  const { nodeName, typeName } = req.query;
+router.get('/', (req, res) => {
+  const { folderName, nodeName } = req.query;
 
   try {
     let resp = null;
-    if (typeName === "nodes") {
-      resp = getNodes(nodeName)
+    if (folderName === "materials") {
+      resp = getMaterialNode(nodeName)
+    }
+    else if (folderName === "geometries") {
+      resp = getGeometryNode(nodeName)
     } 
     else {
-      resp = getGeometryNode(nodeName)
+      resp = getNodes(nodeName)
     }
     resp && res.send(resp)
 

@@ -16,22 +16,23 @@ export const useNodesApi = () => {
 }
 
 export const NodesApiProvider = ({children}: any) => {
-	const { nodesAdded, setNodesAdded, nodeName, typeName, setCurrentGeometry } = useParameters();
+	const { nodesAdded, setNodesAdded, nodeName, currentFile, setCurrentGeometry } = useParameters();
 	const [ nodesData, setNodesData ] = useState<any>(null);
 
 	const createNode = () => {
 		const threeDefinition = THREE;
 		const geo = eval(`new threeDefinition.${nodeName}()`);
-		typeName === "geometries" && setCurrentGeometry(geo);
+		currentFile === "geometries" && setCurrentGeometry(geo);
 	}
 
 	useEffect(() => {
+		console.log(currentFile)
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
 				nodes
 				?nodeName=${nodeName}
-				&typeName=${typeName}				
+				&folderName=${currentFile}				
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);
@@ -40,8 +41,8 @@ export const NodesApiProvider = ({children}: any) => {
 			setNodesAdded([...nodesAdded, receivedData]);
 			createNode()
 		}
-		nodeName && fetchData()
-	}, [ nodeName, typeName ])
+		nodeName && fetchData();
+	}, [ nodeName ])
 
 	return (
 		<NodesApiContext.Provider value={{ nodesData }}>

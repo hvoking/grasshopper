@@ -20,7 +20,7 @@ export const FilesApiProvider = ({children}: any) => {
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
-				files_api
+				files
 				?file=${currentFile}
 			`
 			const url = tempUrl.replace(/\s/g, '');

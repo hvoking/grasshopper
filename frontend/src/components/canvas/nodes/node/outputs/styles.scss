@@ -3,18 +3,6 @@ $logoAfter: './img/end.png';
 
 .node-outputs {
   align-self: center;
-  justify-self: center;
-}
-.after {
-  background-image: url($logoAfter);
-  background-size: 10px 10px;
-  display: inline-block;
-  width: 10px; 
-  height: 10px;
-  position: relative;
-  right: -6px;
-  content:"";
-  cursor: pointer;
 }
 .before {
   background-image: url($logo);
@@ -24,6 +12,17 @@ $logoAfter: './img/end.png';
   height: 10px;
   position: relative;
   left: -6px;
+  content:"";
+  cursor: pointer;
+}
+.after {
+  background-image: url($logoAfter);
+  background-size: 10px 10px;
+  display: inline-block;
+  width: 10px; 
+  height: 10px;
+  position: relative;
+  right: -6px;
   content:"";
   cursor: pointer;
 }

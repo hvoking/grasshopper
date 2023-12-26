@@ -16,7 +16,7 @@ export const FoldersApiProvider = ({children}: any) => {
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
-				folders_api/
+				folders
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);

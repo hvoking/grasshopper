@@ -24,7 +24,6 @@ export const ParametersProvider = ({children}: any) => {
 	const [ delay, setDelay ] = useState<any>(null);
 	const [ currentFile, setCurrentFile ] = useState<any>(null);
 	const [ nodeName, setNodeName ] = useState<any>(null);
-	const [ typeName, setTypeName ] = useState<any>(null);
 	const [ currentGeometry, setCurrentGeometry  ] = useState<any>(null);
 
 	const activeSearchBox: searchBoxType = (e) => {
@@ -45,7 +44,6 @@ export const ParametersProvider = ({children}: any) => {
 			searchBox, position, scene,
 			delay, setDelay,
 			currentFile, setCurrentFile,
-			typeName, setTypeName,
 			nodeName, setNodeName,
 			currentGeometry, setCurrentGeometry
 		}}>

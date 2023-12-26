@@ -7,7 +7,7 @@ import path from 'path';
 
 const router = express.Router();
 
-router.get('/files_api', (req, res) => {
+router.get('/', (req, res) => {
   const threejsTypesPath = path.resolve(__dirname, '../../../../frontend/node_modules/@types/three/src');
 
   try {
