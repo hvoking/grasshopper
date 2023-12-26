@@ -4,21 +4,12 @@ import path from 'path';
 const re = /(constructor)(.*)(\( )(.*)( \))/g;
 const geometryPath = path.resolve(__dirname, '../../../../frontend/node_modules/three/src/Geometries/');
 
-const readFile = (path: any) => {
-  try {
-    return readFileSync(path);
-  } catch (error) {
-    console.error('Error reading file:', error);
-    return '';
-  }
-};
-
 export const getParameters = () => {
   const geometries: any = {};
   const geometryFiles = readdirSync(geometryPath);
   geometryFiles.forEach(geometry => {
     const currentPath = `${geometryPath}${geometry}`;
-    const geoFile: any = readFile(currentPath);
+    const geoFile: any = readFileSync(currentPath);
     const currentIterator = [...geoFile.matchAll(re)];
     const matches = currentIterator.map(i => i[4]);
     if (matches.length > 0) {

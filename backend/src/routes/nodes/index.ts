@@ -7,15 +7,16 @@ import express from 'express';
 
 const router = express.Router();
 
-router.get('/nodes_api', (req, res) => {
+router.get('/nodes', (req, res) => {
+  const { nodeName, typeName } = req.query;
+
   try {
-    const { node_name, type_name } = req.query;
     let resp = null;
-    if (type_name === "nodes") {
-      resp = getNodes(node_name)
+    if (typeName === "nodes") {
+      resp = getNodes(nodeName)
     } 
     else {
-      resp = getGeometryNode(node_name)
+      resp = getGeometryNode(nodeName)
     }
     resp && res.send(resp)
 

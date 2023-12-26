@@ -11,11 +11,11 @@ export const ApiProvider = ({ children }: any) => {
 		<FoldersApiProvider>
 		<FilesApiProvider>
 		<GeometriesApiProvider>
-		<SearchApiProvider>
 		<NodesApiProvider>
+		<SearchApiProvider>
 			{ children }
-		</NodesApiProvider>
 		</SearchApiProvider>
+		</NodesApiProvider>
 		</GeometriesApiProvider>
 		</FilesApiProvider>
 		</FoldersApiProvider>

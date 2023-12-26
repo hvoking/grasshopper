@@ -16,7 +16,7 @@ export const useNodesApi = () => {
 }
 
 export const NodesApiProvider = ({children}: any) => {
-	const { nodesAdded, setNodesAdded, nodeName, typeName, setCurrentGeometry  } = useParameters();
+	const { nodesAdded, setNodesAdded, nodeName, typeName, setCurrentGeometry } = useParameters();
 	const [ nodesData, setNodesData ] = useState<any>(null);
 
 	const createNode = () => {
@@ -29,9 +29,9 @@ export const NodesApiProvider = ({children}: any) => {
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
-				nodes_api
-				?node_name=${nodeName}
-				&type_name=${typeName}				
+				nodes
+				?nodeName=${nodeName}
+				&typeName=${typeName}				
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);

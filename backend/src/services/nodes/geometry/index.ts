@@ -11,9 +11,6 @@ export const getGeometryNode = (geometry: any) => {
   const currentIterator = [...geometriesTypes.toString().matchAll(currentPattern)];
   const currentInterface = currentIterator.map(i => i.slice(1, 3));
   const geometries = currentInterface.map(i => i[0]);
-  const resp = { 
-    inputs: geometries, 
-    output: geometry 
-  }
+  const resp = { inputs: geometries, output: geometry }
   return resp;
 };
