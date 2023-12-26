@@ -1,6 +1,5 @@
 // App imports
-import { getGeometries } from '../../services/folders/geometries';
-import { getFolders } from '../../services/folders';
+import { getFolders, getGeometries } from '../../services/folders';
 
 // Third-party imports
 import express from 'express';
@@ -22,7 +21,7 @@ router.get('/', (req, res) => {
 router.get('/geometries', (req, res) => {
   try {
     const resp = getGeometries();
-    res.json(resp);
+    res.send(resp);
   }
   catch (error) {
     console.error('Error processing request:', error);
