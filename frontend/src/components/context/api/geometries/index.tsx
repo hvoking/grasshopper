@@ -16,7 +16,7 @@ export const GeometriesApiProvider = ({children}: any) => {
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
-				folders/
+				files/
 				geometries
 			`
 			const url = tempUrl.replace(/\s/g, '');

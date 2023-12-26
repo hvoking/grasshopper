@@ -1,7 +1,7 @@
 // Context imports
-import { useSearchApi } from '../../context/api/search';
-import { useGeometriesApi } from '../../context/api/geometries';
-import { useFilters } from '../../context/filters';
+import { useSearchApi } from '../../../context/api/search';
+import { useGeometriesApi } from '../../../context/api/geometries';
+import { useFilters } from '../../../context/filters';
 import './styles.scss';
 
 export const NodesList = () => {

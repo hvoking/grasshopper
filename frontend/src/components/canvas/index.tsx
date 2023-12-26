@@ -1,7 +1,7 @@
 // App imports
 import { Nodes } from './nodes';
 import { Graph } from './graph';
-import { Search } from '../search';
+import { Search } from './search';
 import './styles.scss';
 
 // Context imports

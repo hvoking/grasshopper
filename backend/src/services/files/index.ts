@@ -1,5 +1,8 @@
 // Third-party imports
 import { readdirSync } from 'fs';
+import path from 'path';
+
+const srcPath = '../../../../frontend/node_modules/@types/three/src';
 
 export const getFiles = (path: any) => {
   const listOfFiles = [];
@@ -13,4 +16,11 @@ export const getFiles = (path: any) => {
   }
 
   return listOfFiles.sort();
+};
+
+export const getGeometries = () => {
+  const filePath = path.resolve(__dirname, srcPath + '/geometries');
+  const currentDir = readdirSync(filePath)
+    .map(item => item.split('.d.ts')[0])
+  return currentDir.sort();
 };

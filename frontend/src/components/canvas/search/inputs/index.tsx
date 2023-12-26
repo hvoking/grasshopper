@@ -2,7 +2,7 @@
 import './styles.scss';
 
 // Context imports
-import { useFilters } from '../../context/filters';
+import { useFilters } from '../../../context/filters';
 
 export const NodesInputs = () => {
 	const { currentInput, setCurrentInput } = useFilters();
