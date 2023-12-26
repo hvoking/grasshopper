@@ -4,9 +4,10 @@ import path from 'path';
 
 const srcPath = '../../../../frontend/node_modules/@types/three/src';
 
-export const getFiles = (path: any) => {
+export const getFiles = (file: any) => {
+  const filePath = path.resolve(__dirname, srcPath + '/' + file);
   const listOfFiles = [];
-  const files = readdirSync(path);
+  const files = readdirSync(filePath);
 
   for (const file of files) {
     if (file !== 'listOfFiles.d.ts') {

@@ -3,7 +3,6 @@ import { getFolders } from '../../services/folders';
 
 // Third-party imports
 import express from 'express';
-import path from 'path';
 
 const router = express.Router();
 
