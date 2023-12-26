@@ -9,14 +9,14 @@ import express from 'express';
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const { folderName, nodeName } = req.query;
+  const { typeName, nodeName } = req.query;
 
   try {
     let resp = null;
-    if (folderName === "materials") {
+    if (typeName === "materials") {
       resp = getMaterialNode(nodeName)
     }
-    else if (folderName === "geometries") {
+    else if (typeName === "geometries") {
       resp = getGeometryNode(nodeName)
     } 
     else {

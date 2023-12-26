@@ -3,13 +3,13 @@ import { Container } from './container';
 import { Footer } from './footer';
 import './styles.scss';
 
-export const Subtools = ({ currentTool }: any) => {
+export const Tools = ({ currentTool }: any) => {
 	return (
-		<div className="subtools">
+		<div className="tools-wrapper">
 			<Container/>
 			<Footer currentTool={currentTool}/>
 		</div>
 	)
 }
 
-Subtools.displayName="Subtools";
+Tools.displayName="Tools";

@@ -8,7 +8,7 @@ import './styles.scss';
 import { useFilters } from '../context/filters';
 import { useSpline } from '../context/spline';
 
-export const ThreejsCanvas = () => {
+export const Canvas = () => {
 	const { deActivateSearchBox, activeSearchBox } = useFilters();
 	const { setSplineEndPosition } = useSpline();
 
@@ -32,4 +32,4 @@ export const ThreejsCanvas = () => {
 	)
 }
 
-ThreejsCanvas.displayName="ThreejsCanvas";
+Canvas.displayName="Canvas";

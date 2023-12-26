@@ -31,7 +31,7 @@ export const NodesApiProvider = ({children}: any) => {
 				${process.env.REACT_APP_API_URL}/
 				nodes
 				?nodeName=${nodeName}
-				&folderName=${typeName}				
+				&typeName=${typeName}				
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);
