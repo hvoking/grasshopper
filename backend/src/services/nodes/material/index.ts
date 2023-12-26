@@ -6,7 +6,7 @@ const materialPath = path.resolve(__dirname, '../../../../../frontend/node_modul
 
 export const getMaterialNode = (material: any) => {
   const currentPath = `${materialPath}/${material}.d.ts`;
-  const currentPattern = /(\w+)(\??:) (\w+)(?:[,\)])/g;
+  const currentPattern = /(\w+)(:) (\w+)(;)/g;
   const currentFile = readFileSync(currentPath);
   const currentIterator = [...currentFile.toString().matchAll(currentPattern)];
   const currentInterface = currentIterator.map(i => i.slice(1, 3));

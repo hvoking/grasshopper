@@ -2,17 +2,24 @@
 import './styles.scss';
 
 // Context imports
-import { useParameters } from '../../../../context/parameters';
+import { useFilters } from '../../../../context/filters';
 import { useFilesApi } from '../../../../context/api/files';
+import { useGeometriesApi } from '../../../../context/api/geometries';
 
 export const SubToolsList = () => {
-	const { setNodeName } = useParameters();
+	const { setNodeName, setTypeName } = useFilters();
 	const { filesData } = useFilesApi();
+	const { geometriesData } = useGeometriesApi();
 
 	const onClick = (e: any) => {
 		e.preventDefault();
 		const nodeName = e.target.dataset.item;
+		let typeName = 'nodes';
+		if (geometriesData.includes(nodeName)) {
+			typeName = 'geometries';
+		}
 		setNodeName(nodeName);
+		setTypeName(typeName);
 	}
 
 	return (

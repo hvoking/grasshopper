@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useParameters } from '../../parameters';
+import { useFilters } from '../../filters';
 
 const SearchApiContext: React.Context<any> = createContext(null)
 
@@ -13,7 +13,7 @@ export const useSearchApi = () => {
 }
 
 export const SearchApiProvider = ({children}: any) => {
-	const { currentInput } = useParameters();
+	const { currentInput } = useFilters();
 	const [ searchData, setSearchData ] = useState<any>(null);
 
 	useEffect(() => {

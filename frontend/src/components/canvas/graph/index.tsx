@@ -6,13 +6,13 @@ import { OrbitControls } from './orbit'
 import { Geometry } from './geometry';
 
 // Context imports
-import { useParameters } from '../../context/parameters';
+import { useScene } from '../../context/three/scene';
 import { useCamera } from '../../context/three/camera';
 import { useRenderer } from '../../context/three/renderer';
 
 export const Graph = () => {
 	const canvasRef = useRef<null | HTMLDivElement>(null);
-	const { scene } = useParameters();
+	const { scene } = useScene();
 	const { createNewCamera } = useCamera();
 	const { createNewRenderer } = useRenderer();
 	

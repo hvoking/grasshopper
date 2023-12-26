@@ -1,12 +1,12 @@
 // App imports
-import { ParametersProvider } from './parameters';
+import { FiltersProvider } from './filters';
 import { ThreeProvider } from './three';
 import { SplineProvider } from './spline';
 import { ApiProvider } from './api';
 
 export const MainProvider = ({children}: any) => {
   return (
-    <ParametersProvider>
+    <FiltersProvider>
     <ThreeProvider>
     <SplineProvider>
     <ApiProvider>
@@ -14,7 +14,7 @@ export const MainProvider = ({children}: any) => {
     </ApiProvider>
     </SplineProvider>
     </ThreeProvider>
-    </ParametersProvider>
+    </FiltersProvider>
   )
 }
 

@@ -7,23 +7,23 @@ import { Scene } from 'three';
 interface positionType { x: number, y: number };
 interface searchBoxType {(e: React.MouseEvent<HTMLDivElement>): void};
 
-const ParametersContext: React.Context<any> = createContext(null);
+const FiltersContext: React.Context<any> = createContext(null);
 
-export const useParameters = () => {
+export const useFilters = () => {
 	return (
-		useContext(ParametersContext)
+		useContext(FiltersContext)
 	)
 }
 
-export const ParametersProvider = ({children}: any) => {
+export const FiltersProvider = ({children}: any) => {
 	const [ position, setPosition ] = useState<positionType>({x: 0, y: 0});
 	const [ searchBox, setSearchBox ] = useState<boolean>(false);
 	const [ nodesAdded, setNodesAdded ] = useState<string[]>([]);
 	const [ currentInput, setCurrentInput ] = useState<string>('');
-	const [ scene, setScene ] = useState<Scene>(new Scene());
 	const [ delay, setDelay ] = useState<any>(null);
 	const [ currentFile, setCurrentFile ] = useState<any>(null);
 	const [ nodeName, setNodeName ] = useState<any>(null);
+	const [ typeName, setTypeName ] = useState<any>(null);
 	const [ currentGeometry, setCurrentGeometry  ] = useState<any>(null);
 
 	const activeSearchBox: searchBoxType = (e) => {
@@ -37,19 +37,20 @@ export const ParametersProvider = ({children}: any) => {
 	};
 
 	return (
-		<ParametersContext.Provider value={{ 
+		<FiltersContext.Provider value={{ 
 			activeSearchBox, deActivateSearchBox, 
 			nodesAdded, setNodesAdded, 
 			currentInput, setCurrentInput,
-			searchBox, position, scene,
+			searchBox, position,
 			delay, setDelay,
 			currentFile, setCurrentFile,
 			nodeName, setNodeName,
+			typeName, setTypeName,
 			currentGeometry, setCurrentGeometry
 		}}>
 			{children}
-		</ParametersContext.Provider>
+		</FiltersContext.Provider>
 	)
 }
 
-ParametersContext.displayName = "ParametersContext";
+FiltersContext.displayName = "FiltersContext";

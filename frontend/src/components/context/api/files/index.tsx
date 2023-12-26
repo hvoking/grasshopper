@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useParameters } from '../../parameters';
+import { useFilters } from '../../filters';
 
 const FilesApiContext: React.Context<any> = createContext(null)
 
@@ -13,7 +13,7 @@ export const useFilesApi = () => {
 }
 
 export const FilesApiProvider = ({children}: any) => {
-	const { currentFile } = useParameters();
+	const { currentFile } = useFilters();
 	const [ filesData, setFilesData ] = useState<any>(null);
 
 	useEffect(() => {

@@ -4,10 +4,10 @@ import { NodesInputs } from './inputs';
 import './styles.scss';
 
 // Context imports
-import { useParameters } from '../context/parameters';
+import { useFilters } from '../context/filters';
 
 export const Search = () => {
-	const { position, searchBox } = useParameters();
+	const { position, searchBox } = useFilters();
 
 	const x = position.x - 100;
 	const y = position.y - 40;

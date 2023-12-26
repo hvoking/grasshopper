@@ -3,10 +3,10 @@ import { SubToolsList } from './list';
 import './styles.scss';
 
 // Context imports
-import { useParameters } from '../../../context/parameters';
+import { useFilters } from '../../../context/filters';
 
 export const Footer = ({ currentTool }: any) => {
-	const { currentFile, setCurrentFile, delay, setDelay } = useParameters();
+	const { currentFile, setCurrentFile, delay, setDelay } = useFilters();
 
 	const onMouseEnter = () => {
 		setDelay(setTimeout(() => setCurrentFile(currentTool), 200))

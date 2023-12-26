@@ -9,8 +9,6 @@ export const getGeometryNode = (geometry: any) => {
   const currentPattern = /(\w+)(\??:) (\w+)(?:[,\)])/g;
   const currentFile = readFileSync(currentPath);
   const currentIterator = [...currentFile.toString().matchAll(currentPattern)];
-  const currentInterface = currentIterator.map(i => i.slice(1, 3));
-  const nodeInputs = currentInterface.map(i => i[0]);
-  const resp = { inputs: nodeInputs, output: geometry }
-  return resp;
+  const nodeInputs = currentIterator.map(i => i.slice(1, 2)[0]);
+  return { inputs: nodeInputs, output: geometry }
 };

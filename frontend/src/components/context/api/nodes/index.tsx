@@ -2,7 +2,7 @@
 import { useState, useEffect, useContext, createContext } from 'react';
 
 // Context imports
-import { useParameters } from '../../parameters';
+import { useFilters } from '../../filters';
 
 // Third-party imports
 import * as THREE from 'three';
@@ -16,23 +16,22 @@ export const useNodesApi = () => {
 }
 
 export const NodesApiProvider = ({children}: any) => {
-	const { nodesAdded, setNodesAdded, nodeName, currentFile, setCurrentGeometry } = useParameters();
+	const { nodesAdded, setNodesAdded, nodeName, typeName, setCurrentGeometry } = useFilters();
 	const [ nodesData, setNodesData ] = useState<any>(null);
 
 	const createNode = () => {
 		const threeDefinition = THREE;
 		const geo = eval(`new threeDefinition.${nodeName}()`);
-		currentFile === "geometries" && setCurrentGeometry(geo);
+		typeName === "geometries" && setCurrentGeometry(geo);
 	}
 
 	useEffect(() => {
-		console.log(currentFile)
 		const fetchData = async () => {
 			const tempUrl = `
 				${process.env.REACT_APP_API_URL}/
 				nodes
 				?nodeName=${nodeName}
-				&folderName=${currentFile}				
+				&folderName=${typeName}				
 			`
 			const url = tempUrl.replace(/\s/g, '');
 			const res = await fetch(url);

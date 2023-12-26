@@ -2,10 +2,10 @@
 import './styles.scss';
 
 // Context imports
-import { useParameters } from '../../context/parameters';
+import { useFilters } from '../../context/filters';
 
 export const NodesInputs = () => {
-	const { currentInput, setCurrentInput } = useParameters();
+	const { currentInput, setCurrentInput } = useFilters();
 
 	const onChange: (e: any) => void = (e) => {
 		const input = e.currentTarget.value

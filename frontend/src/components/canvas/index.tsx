@@ -5,11 +5,11 @@ import { Search } from '../search';
 import './styles.scss';
 
 // Context imports
-import { useParameters } from '../context/parameters';
+import { useFilters } from '../context/filters';
 import { useSpline } from '../context/spline';
 
 export const ThreejsCanvas = () => {
-	const { deActivateSearchBox, activeSearchBox } = useParameters();
+	const { deActivateSearchBox, activeSearchBox } = useFilters();
 	const { setSplineEndPosition } = useSpline();
 
 	const onMouseMove = (e: any) => {

@@ -3,10 +3,10 @@ import { Node } from './node';
 import { Spline } from './spline';
 
 // Context imports
-import { useParameters } from '../../context/parameters';
+import { useFilters } from '../../context/filters';
 
 export const Nodes = () => {
-	const { nodesAdded } = useParameters();
+	const { nodesAdded } = useFilters();
 	
 	return (
 		<>
