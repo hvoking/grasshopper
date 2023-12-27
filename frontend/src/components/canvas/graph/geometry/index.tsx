@@ -6,7 +6,7 @@ import { useFilters } from '../../../context/filters';
 import { useScene } from '../../../context/three/scene';
 
 // Third-party imports
-import { Mesh, Object3D, MeshBasicMaterial, Points, PointsMaterial, DoubleSide } from 'three';
+import { Mesh, Object3D, MeshBasicMaterial, MeshStandardMaterial, Points, PointsMaterial, DoubleSide } from 'three';
 
 export const Geometry = () => {
 	const { currentGeometry } = useFilters();
@@ -25,10 +25,11 @@ export const Geometry = () => {
 	}
 
 	const createMesh = () => {
-		const meshMaterial = new MeshBasicMaterial( { color: 0xBBCC00, side: DoubleSide } );
-		const pointMaterial = new PointsMaterial( { size: 3, sizeAttenuation: false, color: 'aqua' } );
+		// const meshMaterial = new MeshBasicMaterial( { color: 0xBBCC00, side: DoubleSide } );
+		const meshMaterial = new MeshStandardMaterial({ color: 0xBBCC00, side: DoubleSide, roughness: 0.123 });
+		const pointMaterial = new PointsMaterial({ size: 3, sizeAttenuation: false, color: 'aqua' });
 		const group = new Object3D();
-		clearScene(scene);
+		// clearScene(scene);
 		scene.add(group);
 		group.position.set(0, 0, 0);
 		const points = new Points( currentGeometry, pointMaterial );

@@ -2,7 +2,7 @@
 import { useContext, createContext } from 'react';
 
 // Third-party imports
-import { WebGLRenderer } from 'three';
+import * as THREE from 'three';
 
 const RendererContext: React.Context<any> = createContext(null)
 
@@ -13,10 +13,11 @@ export const useRenderer = () => {
 }
 
 export const RendererProvider = ({children}: any) => {
-	const createNewRenderer = (): WebGLRenderer => {
-		const renderer = new WebGLRenderer();
+	const createNewRenderer = (): any => {
+		const renderer = new THREE.WebGLRenderer();
 		renderer.setClearColor(0xd4d0c8);
-		// renderer.setSize( window.innerWidth, window.innerHeight );
+		// renderer.setPixelRatio(window.devicePixelRatio)
+		renderer.setSize( window.innerWidth, window.innerHeight - 178 );
 		return renderer
 	}
 
