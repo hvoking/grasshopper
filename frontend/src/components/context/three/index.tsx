@@ -1,16 +1,16 @@
 // Context imports
-import { CameraProvider } from './camera';
-import { RendererProvider } from './renderer';
-import { SceneProvider } from './scene';
+import { CanvasProvider } from './canvas';
+import { MaterialProvider } from './material';
+import { GeometryProvider } from './geometry';
 
 export const ThreeProvider = ({ children }: any) => {
 	return (
-		<RendererProvider>
-		<SceneProvider>
-		<CameraProvider>
+		<CanvasProvider>
+		<MaterialProvider>
+		<GeometryProvider>
 			{ children }
-		</CameraProvider>
-		</SceneProvider>
-		</RendererProvider>
+		</GeometryProvider>
+		</MaterialProvider>
+		</CanvasProvider>
 	)
 }

@@ -1,31 +1,38 @@
+// React imports
+import { useEffect, useRef } from 'react';
+
 // App imports
 import { Nodes } from './nodes';
-import { Graph } from './graph';
 import { Search } from './search';
+import { OrbitControls } from './orbit';
 import './styles.scss';
 
 // Context imports
 import { useFilters } from '../context/filters';
 import { useSpline } from '../context/spline';
+import { useCanvas } from '../context/three/canvas';
 
 export const Canvas = () => {
-	const { deActivateSearchBox, activeSearchBox } = useFilters();
-	const { setSplineEndPosition } = useSpline();
+	const canvasRef = useRef<null | HTMLDivElement>(null);
 
-	const onMouseMove = (e: any) => {
-		const x = e.clientX;
-		const y = e.clientY - 180;
-		setSplineEndPosition({x: x, y: y});
-	};
+	const { deActivateSearchBox, activeSearchBox } = useFilters();
+	const { getSplinePosition } = useSpline();
+	const { camera, renderer } = useCanvas();
+	
+	useEffect(() => {
+		new OrbitControls( camera, renderer.domElement );
+
+		canvasRef.current && canvasRef.current.appendChild( renderer.domElement );
+	}, []);
 
 	return (
 		<div
 			className="canvas-wrapper" 
+			ref={canvasRef}
 			onClick={deActivateSearchBox} 
 			onDoubleClick={activeSearchBox}
-			onMouseMove={onMouseMove}
+			onMouseMove={getSplinePosition}
 		>
-			<Graph/>
 			<Search/>
 			<Nodes/>
 		</div>

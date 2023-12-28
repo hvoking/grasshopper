@@ -1,6 +1,5 @@
 // Context imports
 import { useSearchApi } from '../../../context/api/search';
-import { useFilesApi } from '../../../context/api/files';
 import { useFilters } from '../../../context/filters';
 import './styles.scss';
 

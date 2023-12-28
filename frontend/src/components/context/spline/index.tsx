@@ -17,6 +17,12 @@ export const SplineProvider = ({children}: any) => {
 	
 	const activateSpline = () => { setActiveSpline(true) };
 	const startTransmitting: () => void = () => { setTransmitting(prev => !prev) };
+
+	const getSplinePosition = (e: any) => {
+		const x = e.clientX;
+		const y = e.clientY - 180;
+		setSplineEndPosition({x: x, y: y});
+	};
 	
 	return (
 		<SplineContext.Provider 
@@ -25,7 +31,8 @@ export const SplineProvider = ({children}: any) => {
 				splineEndPosition, setSplineEndPosition,
 				startTransmitting, transmitting,
 				activeSpline, setActiveSpline,
-				activateSpline,
+				activateSpline, 
+				getSplinePosition
 			}}
 		>
 			{children}
