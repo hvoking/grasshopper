@@ -15,12 +15,12 @@ export const useCanvas = () => {
 export const CanvasProvider = ({children}: any) => {
 	const scene = new THREE.Scene();
 	const renderer = new THREE.WebGLRenderer();
-	const camera = new THREE.PerspectiveCamera(10, 2, 0.1, 1000);
+	const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-	camera.position.set(2, 2, 2).multiplyScalar(8);
+	camera.position.set(0, 0, 4);
 	camera.lookAt(0, 0, 0);
 
-	renderer.setClearColor(0xd4d0c8);
+	renderer.setClearColor(0xd4d0c8, 0);
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setSize( window.innerWidth, window.innerHeight - 198 );
 

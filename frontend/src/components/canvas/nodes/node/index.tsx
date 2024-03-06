@@ -1,14 +1,14 @@
 // React imports
 import { useRef } from 'react';
 
-// Third-party imports
-import Draggable from 'react-draggable';
-
 // App imports
 import { Outputs } from './outputs';
 import { Inputs } from './inputs';
 import { Name } from './name';
 import './styles.scss';
+
+// Third-party imports
+import Draggable from 'react-draggable';
 
 export const Node = ({nodeItem}: {nodeItem: any}) => {
 	const nodeRef = useRef(null);

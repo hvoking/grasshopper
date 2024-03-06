@@ -3,12 +3,15 @@
   width: fit-content;
   display: grid;
   grid-template-columns: 2fr auto auto;
+  right: 20px;
+  top: 20px;
   grid-gap: 4px;
   font-size: 0.7em;
   border: 1px solid gray;
   border-radius: 4px;
   background-color: #dfdfdf;
   cursor: grab;
+  z-index: 2;
 }
 .node:active {
   cursor: grabbing;

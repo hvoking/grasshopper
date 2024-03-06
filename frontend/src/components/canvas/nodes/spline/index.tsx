@@ -14,7 +14,7 @@ interface distanceType {
 }
 
 export const Spline = () => {
-	const {splineStartPosition, splineEndPosition, activeSpline} = useSpline();
+	const { splineStartPosition, splineEndPosition, activeSpline } = useSpline();
 
 	const distance: distanceType = (a, b) => (Math.sqrt((b.x - a.x)**2 + (b.y - a.y)**2));
 	const dist = distance(splineStartPosition, splineEndPosition);

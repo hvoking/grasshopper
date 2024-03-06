@@ -2,6 +2,7 @@
 import { useEffect, useRef } from 'react';
 
 // App imports
+import { Grid } from './grid';
 import { Nodes } from './nodes';
 import { Search } from './search';
 import { OrbitControls } from './orbit';
@@ -21,13 +22,12 @@ export const Canvas = () => {
 	
 	useEffect(() => {
 		new OrbitControls( camera, renderer.domElement );
-
 		canvasRef.current && canvasRef.current.appendChild( renderer.domElement );
 	}, []);
 
 	return (
 		<div
-			className="canvas-wrapper" 
+			className="canvas-wrapper"
 			ref={canvasRef}
 			onClick={deActivateSearchBox} 
 			onDoubleClick={activeSearchBox}
@@ -35,6 +35,7 @@ export const Canvas = () => {
 		>
 			<Search/>
 			<Nodes/>
+			<Grid/>
 		</div>
 	)
 }

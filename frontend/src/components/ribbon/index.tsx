@@ -13,6 +13,24 @@ export const Ribbon = () => {
 	const toolsRef = useRef<any>(null);
 	const { foldersData } = useFoldersApi();
 
+	const favoriteFolders = [
+		"geometries",
+	    "animation",
+	    "audio",
+	    "cameras",
+	    "core",
+	    "extras",
+	    "helpers",
+	    "lights",
+	    "loaders",
+	    "materials",
+	    "math",
+	    "objects",
+	    "renderers",
+	    "scenes",
+	    "textures"
+	]
+
 	const onwheel = (e: any) => { 
 		toolsRef.current.scrollLeft += e.deltaY 
 	}
@@ -20,7 +38,7 @@ export const Ribbon = () => {
 	return (
 		<Wrapper>
 			<div ref={toolsRef} className="ribbon-wrapper" onWheel={onwheel}>
-				{foldersData.length > 0 && foldersData.map((currentTool: any, index: number) => { 
+				{favoriteFolders.length > 0 && favoriteFolders.map((currentTool: any, index: number) => { 
 					return <Tools key={index} currentTool={currentTool}/>
 				})}
 			</div>

@@ -15,16 +15,18 @@ export const useMaterial = () => {
 export const MaterialProvider = ({children}: any) => {
 	const [ meshMaterial, setMeshMaterial ]  = useState<any>(
 		new THREE.MeshStandardMaterial({ 
-			color: 0xBBCC00, 
+			color: new THREE.Color(1, 0, 0), 
+			opacity: 0.8, 
+			transparent: true,
 			side: THREE.DoubleSide, 
 			roughness: 0.123 
 		})
 	);
 	const [ pointMaterial, setPointMaterial ] = useState<any>(
 		new THREE.PointsMaterial({ 
-			size: 3, 
+			size: 2, 
 			sizeAttenuation: false, 
-			color: 'aqua' 
+			color: new THREE.Color(1, 1, 1),
 		})
 	);
 

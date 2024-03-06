@@ -9,8 +9,13 @@ export const Container = () => {
 			{
 				files.map((file: string, index: number) => {
 					return (
-						<div key={index}>
-							{file.charAt(0)}
+						<div key={index} style={{display: "grid", justifyItems: "center", alignItems: "center"}}>
+							<img 
+								src="static/logo/violet.svg" 
+								alt="logo-computational-designer" 
+								width="50%" 
+
+							/>
 						</div>
 					)
 				})
