@@ -5,7 +5,9 @@ Web-based visual programming environment inspired by Grasshopper, aiming to demo
 Features:
 
 ✨ Visual Programming: Utilize a node-based interface to create algorithms and workflows visually.
+
 ✨ Browser-Based: Access Grasshopper Web directly through your web browser, without the need for additional software installations.
+
 ✨ Modern Technologies: Leverage the capabilities of modern web technologies to provide a seamless and responsive user experience.
 
 Motivation:
