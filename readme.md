@@ -1,5 +1,6 @@
 Grasshopper Web
-Grasshopper Web is a web-based visual programming environment inspired by Grasshopper, aiming to democratize access to computational tools by leveraging modern web technologies. With Grasshopper Web, users can engage in visual programming directly within their browser, eliminating the need for expensive software or powerful hardware.
+
+Web-based visual programming environment inspired by Grasshopper, aiming to democratize access to computational tools by leveraging modern web technologies. With Grasshopper Web, users can engage in visual programming directly within their browser, eliminating the need for expensive software or powerful hardware.
 
 Features:
 Visual Programming: Utilize a node-based interface to create algorithms and workflows visually.
