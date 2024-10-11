@@ -11,7 +11,7 @@ export const Container = () => {
 					return (
 						<div key={index} style={{display: "grid", justifyItems: "center", alignItems: "center"}}>
 							<img 
-								src="static/logo/violet.svg" 
+								src={process.env.PUBLIC_URL + "/static/logos/icon.svg"} 
 								alt="logo-computational-designer" 
 								width="50%" 
 
